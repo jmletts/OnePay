@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="SistemaPOSv0.03" default="run" basedir=".">
+    <description>Builds, tests, and runs the project SistemaPOSv0.03.</description>
+
+    <!-- Importación del script principal de NetBeans -->
+    <import file="nbproject/build-impl.xml"/>
+
+    <!-- Configurar el classpath para incluir dependencias -->
+    <path id="classpath">
+        <fileset dir="lib">
+            <include name="*.jar" />
+        </fileset>
+        <path location="build/classes" />
+    </path>
+
+    <!-- Crear el directorio de destino si no existe -->
+    <target name="-pre-compile">
+        <echo message="Preparando para la compilación..." />
+        <mkdir dir="build/classes" />
+        <echo message="Classpath configurado: ${classpath}" />
+    </target>
+
+    <target name="compile" depends="-pre-compile">
+        <javac srcdir="src" destdir="build/classes" classpathref="classpath" includeantruntime="false" />
+        <echo message="Compilación completada exitosamente." />
+    </target>
+
+    <target name="clean">
+        <delete dir="build/classes" />
+        <echo message="Archivos de compilación eliminados." />
+    </target>
+
+    <target name="run" depends="compile">
+        <java classname="com.tuempresa.MainClass" fork="true" classpathref="classpath">
+            <classpath>
+                <pathelement path="build/classes" />
+            </classpath>
+        </java>
+        <echo message="Ejecutando la aplicación..." />
+    </target>
+</project>
+
