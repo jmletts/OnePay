@@ -1,4 +1,7 @@
-# AutoservicioPOS
+# OnePay v0.03
+
+Se incluyeron mejoras y correcciones en la implementacion de la pasarela de pagos y desarollo de links dinamicos con mercado pago.
+
 
 Este proyecto, **AutoservicioPOS**, es un sistema automatizado de pagos que utiliza el **SDK de MercadoPago para Java**. Permite la generación dinámica de enlaces de pago e integración con la plataforma de MercadoPago. El sistema está diseñado para ser ejecutado en **Java**, configurado con **Ant** como herramienta de construcción, y desarrollado en el entorno de **NetBeans IDE**.
 
