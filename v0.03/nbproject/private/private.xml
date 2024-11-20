@@ -3,8 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/macbook/NetBeansProjects/teste1/src/teste1/venteste.java</file>
-            <file>file:/Users/macbook/NetBeansProjects/teste1/src/InicioSesion1/Register.java</file>
+            <file>file:/Users/macbook/Documents/proyectoPOS/v0.03/src/com/interfaz/loader/loaderIni.java</file>
+            <file>file:/Users/macbook/Documents/proyectoPOS/v0.03/src/com/font/InstallFont.java</file>
+            <file>file:/Users/macbook/Documents/proyectoPOS/v0.03/src/com/mercadopago/service/MercadoPagoService.java</file>
+            <file>file:/Users/macbook/Documents/proyectoPOS/v0.03/src/com/interfaz/iniciosesion/inicioSesion.java</file>
+            <file>file:/Users/macbook/Documents/proyectoPOS/v0.03/src/com/interfaz/dashboard/dashboard/dashboard1.java</file>
+            <file>file:/Users/macbook/Documents/proyectoPOS/v0.03/src/com/mercadopago/service/venteste.java</file>
+            <file>file:/Users/macbook/Documents/proyectoPOS/v0.03/src/com/interfaz/loader/LoaderService2.java</file>
         </group>
     </open-files>
 </project-private>

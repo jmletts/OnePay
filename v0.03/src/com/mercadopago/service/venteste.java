@@ -14,6 +14,7 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import com.interfaz.loader.LoaderService;
 
 /**
  *
@@ -121,15 +122,11 @@ public class venteste extends javax.swing.JFrame {
             System.err.println("No se pudo generar el enlace de pago.");
             return;
         }
+        
+        LoaderService loa = new LoaderService();
+        loa.openLink(url);
 
-        if (Desktop.isDesktopSupported()) {
-            Desktop.getDesktop().browse(new URI(url));
-            System.out.println("Enlace abierto en el navegador: " + url);
-        } else {
-            System.err.println("La clase Desktop no es compatible en este sistema.");
-        }
-    } catch (IOException | URISyntaxException e) {
-        System.err.println("Error al abrir el enlace: " + e.getMessage());
+        
     } catch (NumberFormatException e) {
         System.err.println("Error: cantidad o precio no válido.");
     }   catch (MPException ex) {

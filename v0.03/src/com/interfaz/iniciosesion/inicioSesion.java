@@ -10,19 +10,48 @@ import java.awt.event.ActionListener;
 import javax.swing.Timer;
 import com.interfaz.dashboard.dashboard.dashboard1;
 import java.awt.Frame;
+import com.font.InstallFont;
+import com.interfaz.loader.LoaderService2;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 /**
  *
  * @author macbook
  */
 public class inicioSesion extends javax.swing.JFrame {
     String pin = "1234";
+    int x = 1;
     /**
      * Creates new form inicioSesion
      */
     public inicioSesion() {
         initComponents();
         setLocationRelativeTo(null);
-    }
+        
+        
+            new Thread(() -> {
+         try {
+        while (true) { // Bucle infinito
+            text.setText("BIENVENIDO");
+            Thread.sleep(800);
+
+            text.setText("WELCOME");
+            Thread.sleep(800);
+
+            text.setText("BIENVENUE");
+            Thread.sleep(800);
+            
+            text.setText("ALLIN HAMUY");
+            Thread.sleep(800);
+        }
+        } catch (InterruptedException e) {
+        e.printStackTrace();
+       }
+       }).start();
+
+        
+        }
+        
     
     private void abrirVentanaReg() {
     Register ventanaReg = new Register();
@@ -48,7 +77,7 @@ public class inicioSesion extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        text = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
         panelRound1 = new com.interfaz.iniciosesion.PanelRound();
         jLabel4 = new javax.swing.JLabel();
@@ -97,12 +126,12 @@ public class inicioSesion extends javax.swing.JFrame {
         jLabel1.setToolTipText("");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 220, 36));
 
-        jLabel2.setFont(new java.awt.Font("Red Hat Display", 1, 36)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(170, 0, 0));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("BIENVENIDO");
-        jLabel2.setToolTipText("");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 330, 52));
+        text.setFont(new java.awt.Font("Red Hat Display", 1, 36)); // NOI18N
+        text.setForeground(new java.awt.Color(170, 0, 0));
+        text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        text.setText("BIENVENIDO");
+        text.setToolTipText("");
+        jPanel1.add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 330, 52));
 
         jLabel12.setFont(new java.awt.Font("Red Hat Display", 0, 18)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -449,11 +478,11 @@ public class inicioSesion extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(panelRound5, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
                     .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(34, 34, 34)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                 .addComponent(jLabel14)
                 .addGap(26, 26, 26))
         );
@@ -548,30 +577,38 @@ public class inicioSesion extends javax.swing.JFrame {
     }//GEN-LAST:event_btnINiMouseClicked
 
     private void btnINiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnINiMousePressed
-        // TODO add your handling code here:
-        dashboard1 ventana2 = new dashboard1();
-        String pin1 = "1234";
-        String user = "23978040";
-        
-        
-        
-        if ( passIni.getText().equals(pin1) && (getDniIni.getText().equals(user))) {
-             
+        try {
+            // TODO add your handling code here:
+            dashboard1 ventana2 = new dashboard1();
+            String pin1 = "1234";
+            String user = "23978040";
             
-          for (Frame frame : Frame.getFrames()) {
-            frame.dispose();
-          }
-          
-           ventana2.setVisible(true);
-           
-           
-        } else {
-            paneMess.setBackground(new Color(170, 0, 0));
-            showmes2.setText("LOS DATOS INGRESADOS SON INCORRECTOS");
+            LoaderService2 load = new LoaderService2();
+            
+            load.openLink();
+            
+            
+            
+            if ( passIni.getText().equals(pin1) && (getDniIni.getText().equals(user))) {
+                
+                
+                for (Frame frame : Frame.getFrames()) {
+                    frame.dispose();
+                }
+                
+                ventana2.setVisible(true);
+                
+                
+            } else {
+                paneMess.setBackground(new Color(170, 0, 0));
+                showmes2.setText("LOS DATOS INGRESADOS SON INCORRECTOS");
+            }
+            
+            getPin.setText("");
+            getDniReg.setText("DNI");
+        } catch (InterruptedException ex) {
+            Logger.getLogger(inicioSesion.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        getPin.setText("");
-        getDniReg.setText("DNI");
         
     }//GEN-LAST:event_btnINiMousePressed
 
@@ -627,7 +664,6 @@ public class inicioSesion extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -647,5 +683,6 @@ public class inicioSesion extends javax.swing.JFrame {
     private com.interfaz.iniciosesion.PanelRound panelRound8;
     private javax.swing.JPasswordField passIni;
     private javax.swing.JLabel showmes2;
+    private javax.swing.JLabel text;
     // End of variables declaration//GEN-END:variables
 }
