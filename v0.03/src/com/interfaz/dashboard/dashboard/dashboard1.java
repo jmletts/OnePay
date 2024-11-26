@@ -736,7 +736,7 @@ public class dashboard1 extends javax.swing.JFrame {
         compDash7.setRoundTopRight(60);
 
         jLabel33.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
-        jLabel33.setText("ESTADISTICA DE VENTAS");
+        jLabel33.setText("REPORTES");
 
         jLabel34.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         jLabel34.setText("<html>Visualiza los reportes y ventas<br >al dia y datos del cliente\n</html>");
