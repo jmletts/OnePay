@@ -6,7 +6,7 @@ package com.interfaz.loader;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import com.interfaz.iniciosesion.inicioSesion;
+import com.interfaz.iniciosesion.inicioSesion1;
 import com.font.InstallFont;
 import java.awt.Color;
 
@@ -80,7 +80,7 @@ public class loaderIni extends javax.swing.JFrame {
                 text.setText("Iniciando...");
                 Thread.sleep(1000);
                 
-                inicioSesion ini = new inicioSesion();
+                inicioSesion1 ini = new inicioSesion1();
                 ini.setVisible(true);
                 
                 

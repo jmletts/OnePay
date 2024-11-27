@@ -5,9 +5,12 @@ import com.mercadopago.MercadoPagoConfig;
 import com.mercadopago.client.preference.PreferenceBackUrlsRequest;
 import com.mercadopago.client.preference.PreferenceClient;
 import com.mercadopago.client.preference.PreferenceItemRequest;
+import com.mercadopago.client.preference.PreferencePaymentMethodRequest;
+import com.mercadopago.client.preference.PreferencePaymentMethodsRequest;
 import com.mercadopago.client.preference.PreferenceRequest;
 import com.mercadopago.exceptions.MPApiException;
 import com.mercadopago.exceptions.MPException;
+import com.mercadopago.client.preference.PreferencePaymentTypeRequest;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -49,12 +52,26 @@ public class MercadoPagoService {
             .pending(urlPendiente)
             .build();
 
+        PreferencePaymentMethodsRequest paymentMethods = PreferencePaymentMethodsRequest.builder()
+        .excludedPaymentTypes(List.of(
+       // Excluir tarjetas de débito
+            PreferencePaymentTypeRequest.builder().id("credit_card").build()
+        ))
+        .excludedPaymentMethods(List.of(
+        PreferencePaymentMethodRequest.builder().id("pagoefectivo_atm").build() // Excluir PagoEfectivo
+        ))
+        
+        
+        
+        .build();
+    
         // Crear la preferencia
         PreferenceRequest preferenceRequest = PreferenceRequest.builder()
-            .backUrls(backUrls)
-            .items(items)
-            .autoReturn("approved")
-            .build();
+        .backUrls(backUrls)
+        .items(items)
+        .paymentMethods(paymentMethods) // Incluir configuración aquí
+        .autoReturn("approved")
+        .build();
 
         Preference preference = client.create(preferenceRequest);
 

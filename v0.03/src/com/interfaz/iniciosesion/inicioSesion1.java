@@ -18,15 +18,16 @@ import java.util.logging.Logger;
  *
  * @author macbook
  */
-public class inicioSesion extends javax.swing.JFrame {
+public class inicioSesion1 extends javax.swing.JFrame {
     String pin = "1234";
     int x = 1;
     /**
      * Creates new form inicioSesion
      */
-    public inicioSesion() {
+    public inicioSesion1() {
         initComponents();
         setLocationRelativeTo(null);
+       
         
         
             new Thread(() -> {
@@ -76,19 +77,6 @@ public class inicioSesion extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        text = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        panelRound1 = new com.interfaz.iniciosesion.PanelRound();
-        jLabel4 = new javax.swing.JLabel();
-        panelRound2 = new com.interfaz.iniciosesion.PanelRound();
-        getDniReg = new javax.swing.JTextField();
-        panelRound4 = new com.interfaz.iniciosesion.PanelRound();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        panelRound3 = new com.interfaz.iniciosesion.PanelRound();
-        getPin = new javax.swing.JPasswordField();
         panelRound5 = new com.interfaz.iniciosesion.PanelRound();
         jLabel5 = new javax.swing.JLabel();
         panelRound6 = new com.interfaz.iniciosesion.PanelRound();
@@ -99,11 +87,15 @@ public class inicioSesion extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         panelRound8 = new com.interfaz.iniciosesion.PanelRound();
         passIni = new javax.swing.JPasswordField();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        text = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         paneMess = new javax.swing.JPanel();
         showmes2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
 
         jLabel13.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(102, 102, 102));
@@ -120,151 +112,6 @@ public class inicioSesion extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Red Hat Display", 0, 18)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("____");
-        jLabel1.setToolTipText("");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 70, 220, 36));
-
-        text.setFont(new java.awt.Font("Red Hat Display", 1, 36)); // NOI18N
-        text.setForeground(new java.awt.Color(170, 0, 0));
-        text.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        text.setText("BIENVENIDO");
-        text.setToolTipText("");
-        jPanel1.add(text, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 330, 52));
-
-        jLabel12.setFont(new java.awt.Font("Red Hat Display", 0, 18)); // NOI18N
-        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel12.setText("CAJA RAPIDA");
-        jLabel12.setToolTipText("");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 0, 220, 36));
-
-        panelRound1.setBackground(new java.awt.Color(240, 240, 240));
-        panelRound1.setRoundBottomLeft(50);
-        panelRound1.setRoundBottomRight(50);
-        panelRound1.setRoundTopLeft(50);
-        panelRound1.setRoundTopRight(50);
-        panelRound1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel4.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("INGRESA EL PIN DE SEGURIDAD");
-        jLabel4.setToolTipText("");
-        panelRound1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 260, 20));
-
-        panelRound2.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound2.setRoundBottomLeft(12);
-        panelRound2.setRoundBottomRight(12);
-        panelRound2.setRoundTopLeft(12);
-        panelRound2.setRoundTopRight(12);
-
-        getDniReg.setFont(new java.awt.Font("Red Hat Display", 0, 13)); // NOI18N
-        getDniReg.setForeground(new java.awt.Color(153, 153, 153));
-        getDniReg.setText("DNI");
-        getDniReg.setBorder(null);
-        getDniReg.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                getDniRegFocusGained(evt);
-            }
-            public void focusLost(java.awt.event.FocusEvent evt) {
-                getDniRegFocusLost(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelRound2Layout = new javax.swing.GroupLayout(panelRound2);
-        panelRound2.setLayout(panelRound2Layout);
-        panelRound2Layout.setHorizontalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(getDniReg, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        panelRound2Layout.setVerticalGroup(
-            panelRound2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(getDniReg, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        panelRound1.add(panelRound2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 270, 30));
-
-        panelRound4.setBackground(new java.awt.Color(170, 0, 0));
-        panelRound4.setRoundBottomLeft(25);
-        panelRound4.setRoundBottomRight(25);
-        panelRound4.setRoundTopLeft(25);
-        panelRound4.setRoundTopRight(25);
-
-        jLabel6.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("CONTINUAR");
-        jLabel6.setToolTipText("");
-        jLabel6.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel6MouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                jLabel6MouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                jLabel6MouseExited(evt);
-            }
-        });
-
-        javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
-        panelRound4.setLayout(panelRound4Layout);
-        panelRound4Layout.setHorizontalGroup(
-            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound4Layout.createSequentialGroup()
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        panelRound4Layout.setVerticalGroup(
-            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-        );
-
-        panelRound1.add(panelRound4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 150, 40));
-
-        jLabel7.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(170, 0, 0));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("REGISTRARSE");
-        jLabel7.setToolTipText("");
-        panelRound1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 150, 52));
-
-        jLabel8.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("INGRESA TU DNI");
-        jLabel8.setToolTipText("");
-        panelRound1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 150, 20));
-
-        panelRound3.setBackground(new java.awt.Color(255, 255, 255));
-        panelRound3.setRoundBottomLeft(12);
-        panelRound3.setRoundBottomRight(12);
-        panelRound3.setRoundTopLeft(12);
-        panelRound3.setRoundTopRight(12);
-
-        getPin.setBorder(null);
-
-        javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
-        panelRound3.setLayout(panelRound3Layout);
-        panelRound3Layout.setHorizontalGroup(
-            panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(panelRound3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(getPin, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        panelRound3Layout.setVerticalGroup(
-            panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(getPin, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-        );
-
-        panelRound1.add(panelRound3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
-
         panelRound5.setBackground(new java.awt.Color(240, 240, 240));
         panelRound5.setRoundBottomLeft(50);
         panelRound5.setRoundBottomRight(50);
@@ -277,7 +124,7 @@ public class inicioSesion extends javax.swing.JFrame {
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("CLAVE");
         jLabel5.setToolTipText("");
-        panelRound5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 90, 20));
+        panelRound5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 90, 20));
 
         panelRound6.setBackground(new java.awt.Color(255, 255, 255));
         panelRound6.setRoundBottomLeft(12);
@@ -317,7 +164,7 @@ public class inicioSesion extends javax.swing.JFrame {
             .addComponent(getDniIni, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        panelRound5.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 270, 30));
+        panelRound5.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 270, 30));
 
         panelRound7.setBackground(new java.awt.Color(170, 0, 0));
         panelRound7.setRoundBottomLeft(25);
@@ -359,21 +206,21 @@ public class inicioSesion extends javax.swing.JFrame {
             .addComponent(btnINi, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        panelRound5.add(panelRound7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 150, 40));
+        panelRound5.add(panelRound7, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 220, 150, 40));
 
         jLabel10.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(170, 0, 0));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("INICIO SESION");
         jLabel10.setToolTipText("");
-        panelRound5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 150, 52));
+        panelRound5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 150, 52));
 
         jLabel11.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
         jLabel11.setForeground(new java.awt.Color(102, 102, 102));
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("USUARIO");
         jLabel11.setToolTipText("");
-        panelRound5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 110, 20));
+        panelRound5.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 110, 20));
 
         panelRound8.setBackground(new java.awt.Color(255, 255, 255));
         panelRound8.setRoundBottomLeft(12);
@@ -397,25 +244,66 @@ public class inicioSesion extends javax.swing.JFrame {
             .addComponent(passIni, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
-        panelRound5.add(panelRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
+        panelRound5.add(panelRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(240, 240, 240));
+
+        text.setFont(new java.awt.Font("Red Hat Display", 1, 40)); // NOI18N
+        text.setForeground(new java.awt.Color(170, 0, 0));
+        text.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        text.setText("BIENVENIDO");
+        text.setToolTipText("");
+
+        jLabel12.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel12.setText("ACCEDER");
+        jLabel12.setToolTipText("");
+
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/Recurso 2.png"))); // NOI18N
+
+        jLabel15.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(0, 51, 204));
+        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabel15.setText("Contactar Soporte");
+        jLabel15.setToolTipText("");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(text, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(16, Short.MAX_VALUE))))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27)
+                .addComponent(text, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addComponent(jLabel15)
+                .addContainerGap())
+        );
+
+        panelRound5.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 320, 230));
 
         jLabel3.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(102, 102, 102));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("¿Olvidaste Tu Contraseña?");
         jLabel3.setToolTipText("");
-
-        jLabel14.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel14.setText("eplear 2024");
-        jLabel14.setToolTipText("");
-
-        jLabel15.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel15.setText("¿Olvidaste el PIN de seguridad?");
-        jLabel15.setToolTipText("");
 
         paneMess.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -442,62 +330,62 @@ public class inicioSesion extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
+        jLabel1.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel1.setText("v0.8");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(paneMess, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
+                        .addGap(114, 114, 114)
+                        .addComponent(panelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, 723, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(363, 363, 363)
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(panelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(31, 31, 31)
-                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(panelRound1, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(paneMess, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addGap(107, 107, 107)
+                                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(279, 279, 279)
-                                .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(173, 173, 173)
-                                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 385, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGap(419, 419, 419)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(455, 455, 455)
+                        .addComponent(jLabel1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(paneMess, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(panelRound5, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
-                    .addComponent(panelRound1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel15))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                .addComponent(jLabel14)
-                .addGap(26, 26, 26))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(201, 201, 201)
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(panelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, 290, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 94, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 900, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 947, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -511,55 +399,6 @@ public class inicioSesion extends javax.swing.JFrame {
     private void btnINiMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnINiMouseExited
         panelRound7.setBackground(new Color(170, 0, 0));
     }//GEN-LAST:event_btnINiMouseExited
-
-    private void jLabel6MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseEntered
-        panelRound4.setBackground(Color.gray);
-    }//GEN-LAST:event_jLabel6MouseEntered
-
-    private void jLabel6MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseExited
-        panelRound4.setBackground(new Color(170, 0, 0));
-    }//GEN-LAST:event_jLabel6MouseExited
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-
-        Register ventanaReg = new Register();
-        String check = getPin.getText();
-        String Dni = getDniReg.getText();
-        
-        
-        if ( check.equals(pin) && Dni.length() == 8) {
-           ventanaReg.sendMessage(Dni);
-           abrirVentanaReg();
-           
-        } else {
-            paneMess.setBackground(new Color(170, 0, 0));
-            showmes2.setText("LOS DATOS INGRESADOS SON INCORRECTOS");
-        }
-        
-        getPin.setText("");
-        getDniReg.setText("DNI");
-        
-        
-        
-        
-    }//GEN-LAST:event_jLabel6MouseClicked
-
-    private void getDniRegFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_getDniRegFocusGained
-        // TODO add your handling code here:
-        if (getDniReg.getText().equals("DNI")) {
-                    showmes2.setText("");
-                    getDniReg.setText("");
-                    paneMess.setBackground(Color.white);
-                }
-    }//GEN-LAST:event_getDniRegFocusGained
-
-    private void getDniRegFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_getDniRegFocusLost
-        if (getDniReg.getText().isEmpty()) {
-                    getDniReg.setText("DNI");
-                    showmes2.setText("");
-                    paneMess.setBackground(Color.white);
-                }
-    }//GEN-LAST:event_getDniRegFocusLost
 
     private void getDniIniFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_getDniIniFocusGained
         // TODO add your handling code here:
@@ -604,10 +443,9 @@ public class inicioSesion extends javax.swing.JFrame {
                 showmes2.setText("LOS DATOS INGRESADOS SON INCORRECTOS");
             }
             
-            getPin.setText("");
-            getDniReg.setText("DNI");
+            
         } catch (InterruptedException ex) {
-            Logger.getLogger(inicioSesion.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(inicioSesion1.class.getName()).log(Level.SEVERE, null, ex);
         }
         
     }//GEN-LAST:event_btnINiMousePressed
@@ -634,20 +472,21 @@ public class inicioSesion extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(inicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(inicioSesion1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(inicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(inicioSesion1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(inicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(inicioSesion1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(inicioSesion.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(inicioSesion1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new inicioSesion().setVisible(true);
+                new inicioSesion1().setVisible(true);
             }
         });
     }
@@ -655,28 +494,19 @@ public class inicioSesion extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnINi;
     private javax.swing.JTextField getDniIni;
-    private javax.swing.JTextField getDniReg;
-    private javax.swing.JPasswordField getPin;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel paneMess;
-    private com.interfaz.iniciosesion.PanelRound panelRound1;
-    private com.interfaz.iniciosesion.PanelRound panelRound2;
-    private com.interfaz.iniciosesion.PanelRound panelRound3;
-    private com.interfaz.iniciosesion.PanelRound panelRound4;
     private com.interfaz.iniciosesion.PanelRound panelRound5;
     private com.interfaz.iniciosesion.PanelRound panelRound6;
     private com.interfaz.iniciosesion.PanelRound panelRound7;

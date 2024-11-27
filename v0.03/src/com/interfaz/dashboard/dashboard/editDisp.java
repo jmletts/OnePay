@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.interfaz.dashboard.dashboard;
-import com.interfaz.iniciosesion.inicioSesion;
+import com.interfaz.iniciosesion.inicioSesion1;
 import java.awt.Frame;
 
 /**
@@ -174,7 +174,7 @@ public class editDisp extends javax.swing.JFrame {
             frame.dispose();
         }
         
-        inicioSesion ven2 = new inicioSesion();
+        inicioSesion1 ven2 = new inicioSesion1();
         ven2.setVisible(true);
     }//GEN-LAST:event_jLabel3MousePressed
 
