@@ -19,7 +19,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
-import com.access.cConnection;
 /**
  *
  * @author macbook
@@ -441,55 +440,8 @@ public class inicioSesion1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnINiMouseClicked
 
     private void btnINiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnINiMousePressed
-         cConnection cn = new cConnection(); // invoca a la clase que conecta
-    
-        Statement  st = null; 
-        ResultSet  rs = null;
-        String query;
-
-        int band = 0; //bandera para verificación
-
-        String user = txtUser.getText();
-        String passw = txtPassw.getText();
-
-        if("".equals(txtUser.getText()))
-            JOptionPane.showMessageDialog(null, "Ingrese nombre de usuario");
-        else 
-            if("".equals(txtPassw.getText()))
-                JOptionPane.showMessageDialog(null, "Ingrese contraseña");
-            else
-            {   query = "SELECT * FROM Usuario WHERE NombUser = '"+user+"' AND PassUser = '"+passw+"'";
-
-                try{
-                      st = cn.ObtenerConexion().createStatement();  
-                      rs = st.executeQuery(query);
-
-                      while(rs.next()){
-                            if(rs.getString(1) == null)
-                                    band = 0;  // no coincide user o passw
-                            else
-                                band = 1;
-                        }
-                }
-                catch (SQLException ex){
-                        JOptionPane.showConfirmDialog(null, "ERROR DE ACCESO"+ex);
-                }
-
-                if (band == 1)
-                {
-                    NombUsuario = txtUser.getText();
-
-                    this.setVisible(false);
-                    
-                }
-                else
-                {   JOptionPane.showMessageDialog(null,"ERROR. Vuelva a Ingresar");
-                    this.setVisible(rootPaneCheckingEnabled);   // muestra la ventana actual
-                    this.txtUser.setText("");
-                    this.txtPassw.setText("");
-                    this.txtUser.requestFocus();
-                }
-            }
+        
+        // vacio
     }//GEN-LAST:event_btnINiMousePressed
 
     private void txtUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUserMouseEntered
