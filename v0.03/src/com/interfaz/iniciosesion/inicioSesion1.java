@@ -4,6 +4,9 @@
  */
 package com.interfaz.iniciosesion;
 
+import com.example.FormSplash;
+import com.example.FormVentanaPrincipal;
+import com.example.cConnection;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,6 +14,7 @@ import javax.swing.Timer;
 import com.interfaz.dashboard.dashboard.dashboard1;
 import java.awt.Frame;
 import com.font.InstallFont;
+import static com.interfaz.iniciosesion.FormIniciarSesion.NombUsuario;
 import com.interfaz.loader.LoaderService2;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -441,7 +445,75 @@ public class inicioSesion1 extends javax.swing.JFrame {
 
     private void btnINiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnINiMousePressed
         
-        // vacio
+        cConnection cn = new cConnection(); // invoca a la clase que conecta
+    
+    Statement  st = null; 
+    ResultSet  rs = null;
+    String query;
+    
+    int band = 0; //bandera para verificación
+     
+    String user = txtUser.getText();
+    String passw = txtPassw.getText();
+    
+    if("".equals(txtUser.getText()))
+        JOptionPane.showMessageDialog(null, "Ingrese nombre de usuario");
+    else 
+        if("".equals(txtPassw.getText()))
+            JOptionPane.showMessageDialog(null, "Ingrese contraseña");
+        else
+        {   query = "SELECT * FROM Usuario WHERE NombUser = '"+user+"' AND PassUser = '"+passw+"'";
+
+            try{
+                  st = cn.ObtenerConexion().createStatement();  
+                  rs = st.executeQuery(query);
+
+                  while(rs.next()){
+                        if(rs.getString(1) == null)
+                                band = 0;  // no coincide user o passw
+                        else
+                            band = 1;
+                    }
+            }
+            catch (SQLException ex){
+                    JOptionPane.showConfirmDialog(null, "ERROR DE ACCESO"+ex);
+            }
+     
+            if (band == 1)
+            {
+                NombUsuario = txtUser.getText();
+                        
+                this.setVisible(false);
+                
+                try {
+                        final FormSplash sp = new FormSplash(); 
+             
+                        sp.setVisible(true);
+
+                        final FormVentanaPrincipal vp = new FormVentanaPrincipal();
+
+                        Thread hilos = new Thread()
+                        {   @Override
+                            public void run(){
+                                                                           
+                               
+                            }
+                        };
+            
+                        hilos.start();
+                }
+                catch(Exception e){
+                    JOptionPane.showMessageDialog(null,"Fatal ERROR, Carga erronea de los modulos"); 
+                }
+            }
+            else
+            {   JOptionPane.showMessageDialog(null,"ERROR. Vuelva a Ingresar");
+                this.setVisible(rootPaneCheckingEnabled);   // muestra la ventana actual
+                this.txtUser.setText("");
+                this.txtPassw.setText("");
+                this.txtUser.requestFocus();
+            }
+        }
     }//GEN-LAST:event_btnINiMousePressed
 
     private void txtUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUserMouseEntered

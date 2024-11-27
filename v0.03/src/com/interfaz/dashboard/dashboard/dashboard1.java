@@ -4,6 +4,7 @@
  */
 package com.interfaz.dashboard.dashboard;
 
+import com.example.cConnection;
 import com.interfaz.dashboard.ajustes.ajustes;
 import java.awt.Color;
 import java.awt.Frame;
@@ -12,6 +13,15 @@ import com.interfaz.loader.LoaderService;
 import java.awt.Desktop;
 import java.net.URI;
 import com.interfaz.loader.loader;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 
 /**
@@ -23,6 +33,7 @@ public class dashboard1 extends javax.swing.JFrame {
     /**
      * Creates new form dashboard1
      */
+    Calendar calend = new GregorianCalendar();
     public dashboard1() {
         initComponents();
         setLocationRelativeTo(null);
@@ -43,6 +54,32 @@ public class dashboard1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        frmNuevoProducto = new javax.swing.JFrame();
+        jPanel3 = new javax.swing.JPanel();
+        lblCodigoP = new javax.swing.JLabel();
+        lblNombreP = new javax.swing.JLabel();
+        lblPrecio = new javax.swing.JLabel();
+        lblSaldo = new javax.swing.JLabel();
+        lblUltimoP = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        txtCodigoP = new javax.swing.JTextField();
+        btnRegistrarNuevoProducto = new javax.swing.JButton();
+        btnSalirP = new javax.swing.JButton();
+        panelRound3 = new com.interfaz.dashboard.dashboard.PanelRound();
+        txtNombreP = new javax.swing.JTextField();
+        panelRound4 = new com.interfaz.dashboard.dashboard.PanelRound();
+        txtPrecio = new javax.swing.JTextField();
+        panelRound5 = new com.interfaz.dashboard.dashboard.PanelRound();
+        txtSaldo = new javax.swing.JTextField();
+        frmReportarVenta = new javax.swing.JFrame();
+        jPanel8 = new javax.swing.JPanel();
+        lblReportar = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        btnReportar = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        tblResultadoReporte = new javax.swing.JTable();
+        dateChFechaReportVenta = new com.toedter.calendar.JDateChooser();
         jPanel1 = new javax.swing.JPanel();
         header = new com.interfaz.dashboard.dashboard.PanelRound();
         jLabel1 = new javax.swing.JLabel();
@@ -103,6 +140,312 @@ public class dashboard1 extends javax.swing.JFrame {
         txts13 = new javax.swing.JLabel();
         txts14 = new javax.swing.JLabel();
 
+        frmNuevoProducto.setTitle("REGISTRAR NUEVO PRODUCTO");
+        frmNuevoProducto.setBounds(new java.awt.Rectangle(450, 300, 0, 0));
+        frmNuevoProducto.setMinimumSize(new java.awt.Dimension(720, 450));
+        frmNuevoProducto.setResizable(false);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setMaximumSize(new java.awt.Dimension(800, 800));
+        jPanel3.setMinimumSize(new java.awt.Dimension(500, 435));
+        jPanel3.setPreferredSize(new java.awt.Dimension(427, 435));
+
+        lblCodigoP.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        lblCodigoP.setText("Codigo:");
+
+        lblNombreP.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
+        lblNombreP.setText("Nombre:");
+
+        lblPrecio.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
+        lblPrecio.setText("Precio:");
+
+        lblSaldo.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
+        lblSaldo.setText("Saldo:");
+
+        lblUltimoP.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        lblUltimoP.setText(".........");
+
+        jLabel6.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        jLabel6.setText("Ultimo Codigo Registrado:");
+
+        jLabel7.setFont(new java.awt.Font("Red Hat Display", 1, 24)); // NOI18N
+        jLabel7.setText("Ingresar Datos de Producto");
+
+        txtCodigoP.setBackground(new java.awt.Color(255, 255, 204));
+        txtCodigoP.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        txtCodigoP.setForeground(new java.awt.Color(102, 102, 102));
+
+        btnRegistrarNuevoProducto.setBackground(new java.awt.Color(170, 0, 0));
+        btnRegistrarNuevoProducto.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
+        btnRegistrarNuevoProducto.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarNuevoProducto.setText("Registrar");
+        btnRegistrarNuevoProducto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarNuevoProductoActionPerformed(evt);
+            }
+        });
+
+        btnSalirP.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        btnSalirP.setText("Salir");
+        btnSalirP.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirPActionPerformed(evt);
+            }
+        });
+
+        panelRound3.setBackground(new java.awt.Color(240, 240, 240));
+        panelRound3.setRoundBottomLeft(15);
+        panelRound3.setRoundBottomRight(15);
+        panelRound3.setRoundTopLeft(15);
+        panelRound3.setRoundTopRight(15);
+
+        txtNombreP.setBackground(new java.awt.Color(240, 240, 240));
+        txtNombreP.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        txtNombreP.setBorder(null);
+
+        javax.swing.GroupLayout panelRound3Layout = new javax.swing.GroupLayout(panelRound3);
+        panelRound3.setLayout(panelRound3Layout);
+        panelRound3Layout.setHorizontalGroup(
+            panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(15, Short.MAX_VALUE))
+        );
+        panelRound3Layout.setVerticalGroup(
+            panelRound3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtNombreP, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+        );
+
+        panelRound4.setBackground(new java.awt.Color(240, 240, 240));
+        panelRound4.setRoundBottomLeft(15);
+        panelRound4.setRoundBottomRight(15);
+        panelRound4.setRoundTopLeft(15);
+        panelRound4.setRoundTopRight(15);
+
+        txtPrecio.setBackground(new java.awt.Color(240, 240, 240));
+        txtPrecio.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        txtPrecio.setBorder(null);
+
+        javax.swing.GroupLayout panelRound4Layout = new javax.swing.GroupLayout(panelRound4);
+        panelRound4.setLayout(panelRound4Layout);
+        panelRound4Layout.setHorizontalGroup(
+            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelRound4Layout.setVerticalGroup(
+            panelRound4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+        );
+
+        panelRound5.setBackground(new java.awt.Color(240, 240, 240));
+        panelRound5.setRoundBottomLeft(15);
+        panelRound5.setRoundBottomRight(15);
+        panelRound5.setRoundTopLeft(15);
+        panelRound5.setRoundTopRight(15);
+
+        txtSaldo.setBackground(new java.awt.Color(240, 240, 240));
+        txtSaldo.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        txtSaldo.setBorder(null);
+
+        javax.swing.GroupLayout panelRound5Layout = new javax.swing.GroupLayout(panelRound5);
+        panelRound5.setLayout(panelRound5Layout);
+        panelRound5Layout.setHorizontalGroup(
+            panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelRound5Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(txtSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, 227, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        panelRound5Layout.setVerticalGroup(
+            panelRound5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(txtSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblCodigoP)
+                        .addGap(24, 24, 24)
+                        .addComponent(txtCodigoP, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblUltimoP))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(btnRegistrarNuevoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(29, 29, 29)
+                                .addComponent(btnSalirP, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(lblPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblNombreP, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(lblSaldo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(panelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addGap(99, 281, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCodigoP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCodigoP))
+                .addGap(18, 18, 18)
+                .addComponent(jLabel7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(lblUltimoP))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblNombreP, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(panelRound3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(panelRound4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(27, 27, 27)
+                                .addComponent(panelRound5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(lblPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lblSaldo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnRegistrarNuevoProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(34, 34, 34)
+                        .addComponent(btnSalirP, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)))
+                .addGap(55, 55, 55))
+        );
+
+        javax.swing.GroupLayout frmNuevoProductoLayout = new javax.swing.GroupLayout(frmNuevoProducto.getContentPane());
+        frmNuevoProducto.getContentPane().setLayout(frmNuevoProductoLayout);
+        frmNuevoProductoLayout.setHorizontalGroup(
+            frmNuevoProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 734, javax.swing.GroupLayout.PREFERRED_SIZE)
+        );
+        frmNuevoProductoLayout.setVerticalGroup(
+            frmNuevoProductoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(frmNuevoProductoLayout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        frmReportarVenta.setMinimumSize(new java.awt.Dimension(764, 441));
+
+        jPanel8.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel8.setMaximumSize(new java.awt.Dimension(32767, 25000));
+
+        lblReportar.setFont(new java.awt.Font("Red Hat Display", 1, 24)); // NOI18N
+        lblReportar.setForeground(new java.awt.Color(170, 0, 0));
+        lblReportar.setText("Reporte Ventas");
+
+        jLabel40.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
+        jLabel40.setText("Seleccione Fecha:");
+
+        btnReportar.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
+        btnReportar.setText("Reportar");
+        btnReportar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportarActionPerformed(evt);
+            }
+        });
+
+        tblResultadoReporte.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Numero Comprobante", "Nombre Usuario", "DNI Cliente", "Monto Total"
+            }
+        ));
+        jScrollPane5.setViewportView(tblResultadoReporte);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblReportar)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(jLabel40)
+                        .addGap(18, 18, 18)
+                        .addComponent(dateChFechaReportVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnReportar))
+                    .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 675, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(lblReportar)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel40)
+                            .addComponent(dateChFechaReportVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(btnReportar)
+                        .addGap(1, 1, 1)))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout frmReportarVentaLayout = new javax.swing.GroupLayout(frmReportarVenta.getContentPane());
+        frmReportarVenta.getContentPane().setLayout(frmReportarVentaLayout);
+        frmReportarVentaLayout.setHorizontalGroup(
+            frmReportarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        frmReportarVentaLayout.setVerticalGroup(
+            frmReportarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBounds(new java.awt.Rectangle(0, 0, 1920, 1080));
 
@@ -129,7 +472,7 @@ public class dashboard1 extends javax.swing.JFrame {
         btnDash.setForeground(new java.awt.Color(102, 102, 102));
         btnDash.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnDash.setText("DASHBOARD");
-        btnDash.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnDash.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnDash.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnDashMouseEntered(evt);
@@ -160,7 +503,7 @@ public class dashboard1 extends javax.swing.JFrame {
         btnRepor.setForeground(new java.awt.Color(102, 102, 102));
         btnRepor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnRepor.setText("REPORTE");
-        btnRepor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRepor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnRepor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnReporMouseClicked(evt);
@@ -197,7 +540,7 @@ public class dashboard1 extends javax.swing.JFrame {
         btnTrans.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnTrans.setText("TRANSACCIONES");
         btnTrans.setToolTipText("");
-        btnTrans.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnTrans.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnTrans.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnTransMouseEntered(evt);
@@ -231,7 +574,7 @@ public class dashboard1 extends javax.swing.JFrame {
         btnAjust.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnAjust.setText("AJUSTES");
         btnAjust.setToolTipText("");
-        btnAjust.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAjust.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnAjust.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnAjustMouseEntered(evt);
@@ -268,7 +611,7 @@ public class dashboard1 extends javax.swing.JFrame {
         btnSopor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnSopor.setText("SOPORTE");
         btnSopor.setToolTipText("");
-        btnSopor.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSopor.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnSopor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnSoporMouseEntered(evt);
@@ -303,7 +646,7 @@ public class dashboard1 extends javax.swing.JFrame {
         btnStart.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnStart.setText("INICIAR OPERACIONES");
         btnStart.setToolTipText("");
-        btnStart.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnStart.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnStart.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 btnStartMouseEntered(evt);
@@ -360,7 +703,7 @@ public class dashboard1 extends javax.swing.JFrame {
         txtDisp.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         txtDisp.setText("Acceso Total   ");
         txtDisp.setToolTipText("");
-        txtDisp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        txtDisp.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtDisp.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 txtDispMouseClicked(evt);
@@ -382,7 +725,7 @@ public class dashboard1 extends javax.swing.JFrame {
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel12.setText("Cerrar Sesion");
         jLabel12.setToolTipText("");
-        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel12.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
         javax.swing.GroupLayout headerLayout = new javax.swing.GroupLayout(header);
         header.setLayout(headerLayout);
@@ -552,6 +895,11 @@ public class dashboard1 extends javax.swing.JFrame {
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel23.setText("Continuar");
+        jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel23MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound7Layout = new javax.swing.GroupLayout(panelRound7);
         panelRound7.setLayout(panelRound7Layout);
@@ -619,7 +967,7 @@ public class dashboard1 extends javax.swing.JFrame {
         jLabel27.setForeground(new java.awt.Color(255, 255, 255));
         jLabel27.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel27.setText("Continuar");
-        jLabel27.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel27.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel27.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel27MousePressed(evt);
@@ -673,7 +1021,7 @@ public class dashboard1 extends javax.swing.JFrame {
         compDash6.setRoundTopRight(60);
 
         jLabel29.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
-        jLabel29.setText("PIN DE SEGURIDAD LOCAL");
+        jLabel29.setText("CREAR OPERADORES");
 
         jLabel30.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         jLabel30.setText("<html>Configura el pin de seguridad local para <br >para añadir operadores y accesos</html>");
@@ -688,6 +1036,11 @@ public class dashboard1 extends javax.swing.JFrame {
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel31.setText("Continuar");
+        jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel31MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound9Layout = new javax.swing.GroupLayout(panelRound9);
         panelRound9.setLayout(panelRound9Layout);
@@ -736,7 +1089,7 @@ public class dashboard1 extends javax.swing.JFrame {
         compDash7.setRoundTopRight(60);
 
         jLabel33.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
-        jLabel33.setText("REPORTES");
+        jLabel33.setText("REPORTE DE VENTAS");
 
         jLabel34.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         jLabel34.setText("<html>Visualiza los reportes y ventas<br >al dia y datos del cliente\n</html>");
@@ -751,6 +1104,11 @@ public class dashboard1 extends javax.swing.JFrame {
         jLabel35.setForeground(new java.awt.Color(255, 255, 255));
         jLabel35.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel35.setText("Continuar");
+        jLabel35.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel35MousePressed(evt);
+            }
+        });
 
         javax.swing.GroupLayout panelRound10Layout = new javax.swing.GroupLayout(panelRound10);
         panelRound10.setLayout(panelRound10Layout);
@@ -1028,6 +1386,130 @@ public class dashboard1 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jLabel27MousePressed
 
+    private void jLabel23MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel23MousePressed
+        frmNuevoProducto.setVisible(true);
+        frmNuevoProducto.setLocationRelativeTo(null);
+        
+        cConnection con = new cConnection();
+        
+        String queryP = "SELECT MAX(CodProd) AS CodProd FROM Producto"; //selecciona el ultimo(MAX) registro de la tabla
+               
+        int codP;
+                
+        try
+        {
+          Statement st = con.ObtenerConexion().createStatement();
+          ResultSet rs = st.executeQuery(queryP);
+             
+          if(rs.next())
+            { 
+              lblUltimoP.setText(rs.getString("CodProd"));
+              codP = Integer.parseInt(rs.getString("CodProd"));
+              codP++;
+              txtCodigoP.setText(String.valueOf(codP));
+              txtCodigoP.setEditable(false);
+              txtNombreP.requestFocus();
+            } 
+        }
+        catch(Exception e)
+        {
+          JOptionPane.showMessageDialog(null,"No existe un Producto. Puede Crear nuevo","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+          
+          codP=1;  // Para poner el primer codigo del producto
+          lblUltimoP.setText("CERO");
+          txtCodigoP.setText(String.valueOf(codP));
+          txtCodigoP.setEditable(false);
+          txtNombreP.requestFocus();
+        }
+    }//GEN-LAST:event_jLabel23MousePressed
+
+    private void btnRegistrarNuevoProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarNuevoProductoActionPerformed
+
+        cConnection con = new cConnection();
+
+        String codProd;
+        String nombProd;
+        String precioProd;
+        String saldoProd;
+
+        try{
+
+            codProd = txtCodigoP.getText();
+            nombProd = txtNombreP.getText();
+            precioProd = txtPrecio.getText();
+            saldoProd = txtSaldo.getText();
+
+            Statement st = null;
+            st = con.ObtenerConexion().createStatement();
+            st.executeUpdate("INSERT INTO Producto(CodProd,NombProd,Precio,Stock)" + "values("+codProd+" , '"+nombProd+"' , "+precioProd+" , "+saldoProd+")");
+
+            JOptionPane.showMessageDialog(null, "Se registró producto...");
+
+            txtCodigoP.setText("");
+            txtNombreP.setText("");
+            txtPrecio.setText("");
+            txtSaldo.setText("");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"No se Pudo Agregar","Mensaje",JOptionPane.CANCEL_OPTION);
+            txtCodigoP.setText("");
+            txtNombreP.setText("");
+            txtPrecio.setText("");
+            txtSaldo.setText("");
+        }
+    }//GEN-LAST:event_btnRegistrarNuevoProductoActionPerformed
+
+    private void btnSalirPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirPActionPerformed
+
+        frmNuevoProducto.setVisible(false);
+    }//GEN-LAST:event_btnSalirPActionPerformed
+
+    private void btnReportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportarActionPerformed
+
+         cConnection con = new cConnection();
+        
+        String FechaReportVenta;
+         
+        try{            
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); //Primero dar formato para fecha
+            FechaReportVenta = sdf.format(dateChFechaReportVenta.getDate());
+
+            DefaultTableModel dtReportVenta = new DefaultTableModel(); //Crear Modelo de Tabla dtBuscarUsuario
+            tblResultadoReporte.setModel(dtReportVenta);  // Asignar el Modelo de Tabla para el tblResultadoUuario (formulario)
+ 
+            dtReportVenta.addColumn("Num Comprob"); //Asigna nom,be a cada columna del Modelo de Tabla
+            dtReportVenta.addColumn("Usuario");
+            dtReportVenta.addColumn("Dni Cliente");
+            dtReportVenta.addColumn("Monto Total");
+     
+            String query = "SELECT * FROM CabecDocVenta WHERE FechaVenta = '"+FechaReportVenta+"'";
+                        
+            PreparedStatement pstm = con.ObtenerConexion().prepareStatement(query);
+            ResultSet rsRV = pstm.executeQuery();         
+ 
+            while(rsRV.next())
+            { //Extrae del rs y lo añade al Modelo de Tabla     
+              dtReportVenta.addRow(new Object[] {rsRV.getString("NumDocVenta"),rsRV.getString("NomUsuario"),rsRV.getString("DNICli"), rsRV.getString("MontoTotal") }); 
+            }  
+            rsRV.close();
+        }        
+        catch(SQLException e){
+  
+            JOptionPane.showMessageDialog(null,"No existe Comprobante de Venta en esta Fecha.","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnReportarActionPerformed
+
+    private void jLabel35MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel35MousePressed
+        frmReportarVenta.setVisible(true);
+        frmReportarVenta.setLocationRelativeTo(null);
+
+        dateChFechaReportVenta.setCalendar(calend);
+    }//GEN-LAST:event_jLabel35MousePressed
+
+    private void jLabel31MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MousePressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel31MousePressed
+
     /**
      * @param args the command line arguments
      */
@@ -1073,7 +1555,10 @@ public class dashboard1 extends javax.swing.JFrame {
     private com.interfaz.dashboard.dashboard.PanelRound btn7;
     private javax.swing.JLabel btnAjust;
     private javax.swing.JLabel btnDash;
+    private javax.swing.JButton btnRegistrarNuevoProducto;
     private javax.swing.JLabel btnRepor;
+    private javax.swing.JButton btnReportar;
+    private javax.swing.JButton btnSalirP;
     private javax.swing.JLabel btnSopor;
     private javax.swing.JLabel btnStart;
     private javax.swing.JLabel btnTrans;
@@ -1081,6 +1566,9 @@ public class dashboard1 extends javax.swing.JFrame {
     private com.interfaz.dashboard.dashboard.PanelRound compDash5;
     private com.interfaz.dashboard.dashboard.PanelRound compDash6;
     private com.interfaz.dashboard.dashboard.PanelRound compDash7;
+    private com.toedter.calendar.JDateChooser dateChFechaReportVenta;
+    private javax.swing.JFrame frmNuevoProducto;
+    private javax.swing.JFrame frmReportarVenta;
     private com.interfaz.dashboard.dashboard.PanelRound header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
@@ -1107,19 +1595,39 @@ public class dashboard1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel38;
     private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
     private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JLabel lblCodigoP;
+    private javax.swing.JLabel lblNombreP;
+    private javax.swing.JLabel lblPrecio;
+    private javax.swing.JLabel lblReportar;
+    private javax.swing.JLabel lblSaldo;
+    private javax.swing.JLabel lblUltimoP;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound1;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound10;
+    private com.interfaz.dashboard.dashboard.PanelRound panelRound3;
+    private com.interfaz.dashboard.dashboard.PanelRound panelRound4;
+    private com.interfaz.dashboard.dashboard.PanelRound panelRound5;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound7;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound8;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound9;
     private com.interfaz.dashboard.dashboard.PanelRound showDisp;
+    private javax.swing.JTable tblResultadoReporte;
+    private javax.swing.JTextField txtCodigoP;
     private javax.swing.JLabel txtDisp;
+    private javax.swing.JTextField txtNombreP;
+    private javax.swing.JTextField txtPrecio;
+    private javax.swing.JTextField txtSaldo;
     private javax.swing.JLabel txts12;
     private javax.swing.JLabel txts13;
     private javax.swing.JLabel txts14;
