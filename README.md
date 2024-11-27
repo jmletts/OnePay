@@ -1,4 +1,4 @@
-# OnePay v0.03
+# OnePay v0.8
 
 Se incluyeron mejoras y correcciones en la implementacion de la pasarela de pagos y desarollo de links dinamicos con mercado pago.
 
