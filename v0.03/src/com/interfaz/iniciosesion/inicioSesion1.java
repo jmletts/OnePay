@@ -12,8 +12,14 @@ import com.interfaz.dashboard.dashboard.dashboard1;
 import java.awt.Frame;
 import com.font.InstallFont;
 import com.interfaz.loader.LoaderService2;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+import com.access.cConnection;
 /**
  *
  * @author macbook
@@ -21,6 +27,7 @@ import java.util.logging.Logger;
 public class inicioSesion1 extends javax.swing.JFrame {
     String pin = "1234";
     int x = 1;
+    public static String NombUsuario;
     /**
      * Creates new form inicioSesion
      */
@@ -49,6 +56,8 @@ public class inicioSesion1 extends javax.swing.JFrame {
         e.printStackTrace();
        }
        }).start();
+            
+       
 
         
         }
@@ -80,13 +89,13 @@ public class inicioSesion1 extends javax.swing.JFrame {
         panelRound5 = new com.interfaz.iniciosesion.PanelRound();
         jLabel5 = new javax.swing.JLabel();
         panelRound6 = new com.interfaz.iniciosesion.PanelRound();
-        getDniIni = new javax.swing.JTextField();
+        txtUser = new javax.swing.JTextField();
         panelRound7 = new com.interfaz.iniciosesion.PanelRound();
         btnINi = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         panelRound8 = new com.interfaz.iniciosesion.PanelRound();
-        passIni = new javax.swing.JPasswordField();
+        txtPassw = new javax.swing.JPasswordField();
         jPanel3 = new javax.swing.JPanel();
         text = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -133,21 +142,21 @@ public class inicioSesion1 extends javax.swing.JFrame {
         panelRound6.setRoundTopLeft(12);
         panelRound6.setRoundTopRight(12);
 
-        getDniIni.setFont(new java.awt.Font("Red Hat Display", 0, 13)); // NOI18N
-        getDniIni.setForeground(new java.awt.Color(153, 153, 153));
-        getDniIni.setText("DNI");
-        getDniIni.setBorder(null);
-        getDniIni.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtUser.setFont(new java.awt.Font("Red Hat Display", 0, 13)); // NOI18N
+        txtUser.setForeground(new java.awt.Color(153, 153, 153));
+        txtUser.setText("DNI");
+        txtUser.setBorder(null);
+        txtUser.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                getDniIniFocusGained(evt);
+                txtUserFocusGained(evt);
             }
             public void focusLost(java.awt.event.FocusEvent evt) {
-                getDniIniFocusLost(evt);
+                txtUserFocusLost(evt);
             }
         });
-        getDniIni.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                getDniIniMouseEntered(evt);
+                txtUserMouseEntered(evt);
             }
         });
 
@@ -157,12 +166,12 @@ public class inicioSesion1 extends javax.swing.JFrame {
             panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound6Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(getDniIni, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelRound6Layout.setVerticalGroup(
             panelRound6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(getDniIni, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(txtUser, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         panelRound5.add(panelRound6, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 270, 30));
@@ -229,7 +238,7 @@ public class inicioSesion1 extends javax.swing.JFrame {
         panelRound8.setRoundTopLeft(12);
         panelRound8.setRoundTopRight(12);
 
-        passIni.setBorder(null);
+        txtPassw.setBorder(null);
 
         javax.swing.GroupLayout panelRound8Layout = new javax.swing.GroupLayout(panelRound8);
         panelRound8.setLayout(panelRound8Layout);
@@ -237,12 +246,12 @@ public class inicioSesion1 extends javax.swing.JFrame {
             panelRound8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(panelRound8Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(passIni, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
+                .addComponent(txtPassw, javax.swing.GroupLayout.DEFAULT_SIZE, 258, Short.MAX_VALUE)
                 .addContainerGap())
         );
         panelRound8Layout.setVerticalGroup(
             panelRound8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(passIni, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+            .addComponent(txtPassw, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
         );
 
         panelRound5.add(panelRound8, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 170, -1, -1));
@@ -416,14 +425,14 @@ public class inicioSesion1 extends javax.swing.JFrame {
         panelRound7.setBackground(new Color(170, 0, 0));
     }//GEN-LAST:event_btnINiMouseExited
 
-    private void getDniIniFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_getDniIniFocusGained
+    private void txtUserFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusGained
         // TODO add your handling code here:
-        getDniIni.setText("");
-    }//GEN-LAST:event_getDniIniFocusGained
+        txtUser.setText("");
+    }//GEN-LAST:event_txtUserFocusGained
 
-    private void getDniIniFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_getDniIniFocusLost
+    private void txtUserFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtUserFocusLost
         // TODO add your handling code here:
-    }//GEN-LAST:event_getDniIniFocusLost
+    }//GEN-LAST:event_txtUserFocusLost
 
     private void btnINiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnINiMouseClicked
         // TODO add your handling code here:
@@ -432,44 +441,61 @@ public class inicioSesion1 extends javax.swing.JFrame {
     }//GEN-LAST:event_btnINiMouseClicked
 
     private void btnINiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnINiMousePressed
-        try {
-            // TODO add your handling code here:
-            dashboard1 ventana2 = new dashboard1();
-            String pin1 = "1234";
-            String user = "23978040";
-            
-            LoaderService2 load = new LoaderService2();
-            
-            load.openLink();
-            
-            
-            
-            if ( passIni.getText().equals(pin1) && (getDniIni.getText().equals(user))) {
-                
-                
-                for (Frame frame : Frame.getFrames()) {
-                    frame.dispose();
+         cConnection cn = new cConnection(); // invoca a la clase que conecta
+    
+        Statement  st = null; 
+        ResultSet  rs = null;
+        String query;
+
+        int band = 0; //bandera para verificación
+
+        String user = txtUser.getText();
+        String passw = txtPassw.getText();
+
+        if("".equals(txtUser.getText()))
+            JOptionPane.showMessageDialog(null, "Ingrese nombre de usuario");
+        else 
+            if("".equals(txtPassw.getText()))
+                JOptionPane.showMessageDialog(null, "Ingrese contraseña");
+            else
+            {   query = "SELECT * FROM Usuario WHERE NombUser = '"+user+"' AND PassUser = '"+passw+"'";
+
+                try{
+                      st = cn.ObtenerConexion().createStatement();  
+                      rs = st.executeQuery(query);
+
+                      while(rs.next()){
+                            if(rs.getString(1) == null)
+                                    band = 0;  // no coincide user o passw
+                            else
+                                band = 1;
+                        }
                 }
-                
-                ventana2.setVisible(true);
-                
-                
-            } else {
-                paneMess.setBackground(new Color(170, 0, 0));
-                showmes2.setText("LOS DATOS INGRESADOS SON INCORRECTOS");
+                catch (SQLException ex){
+                        JOptionPane.showConfirmDialog(null, "ERROR DE ACCESO"+ex);
+                }
+
+                if (band == 1)
+                {
+                    NombUsuario = txtUser.getText();
+
+                    this.setVisible(false);
+                    
+                }
+                else
+                {   JOptionPane.showMessageDialog(null,"ERROR. Vuelva a Ingresar");
+                    this.setVisible(rootPaneCheckingEnabled);   // muestra la ventana actual
+                    this.txtUser.setText("");
+                    this.txtPassw.setText("");
+                    this.txtUser.requestFocus();
+                }
             }
-            
-            
-        } catch (InterruptedException ex) {
-            Logger.getLogger(inicioSesion1.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
     }//GEN-LAST:event_btnINiMousePressed
 
-    private void getDniIniMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_getDniIniMouseEntered
+    private void txtUserMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtUserMouseEntered
         // TODO add your handling code here:
-        getDniIni.setText("");
-    }//GEN-LAST:event_getDniIniMouseEntered
+        txtUser.setText("");
+    }//GEN-LAST:event_txtUserMouseEntered
 
     private void jLabel4MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MousePressed
         dispose();
@@ -513,7 +539,6 @@ public class inicioSesion1 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel btnINi;
-    private javax.swing.JTextField getDniIni;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -532,8 +557,9 @@ public class inicioSesion1 extends javax.swing.JFrame {
     private com.interfaz.iniciosesion.PanelRound panelRound6;
     private com.interfaz.iniciosesion.PanelRound panelRound7;
     private com.interfaz.iniciosesion.PanelRound panelRound8;
-    private javax.swing.JPasswordField passIni;
     private javax.swing.JLabel showmes2;
     private javax.swing.JLabel text;
+    private javax.swing.JPasswordField txtPassw;
+    private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
 }
