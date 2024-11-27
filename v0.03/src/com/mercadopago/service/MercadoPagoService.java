@@ -45,7 +45,6 @@ public class MercadoPagoService {
         List<PreferenceItemRequest> items = new ArrayList<>();
         items.add(itemRequest);
 
-        // Crear URLs de redirección
         PreferenceBackUrlsRequest backUrls = PreferenceBackUrlsRequest.builder()
             .success(urlExito)
             .failure(urlFallo)
@@ -54,14 +53,12 @@ public class MercadoPagoService {
 
         PreferencePaymentMethodsRequest paymentMethods = PreferencePaymentMethodsRequest.builder()
         .excludedPaymentTypes(List.of(
-       // Excluir tarjetas de débito
             PreferencePaymentTypeRequest.builder().id("credit_card").build()
         ))
         .excludedPaymentMethods(List.of(
         PreferencePaymentMethodRequest.builder().id("pagoefectivo_atm").build() // Excluir PagoEfectivo
         ))
-        
-        
+
         
         .build();
     
