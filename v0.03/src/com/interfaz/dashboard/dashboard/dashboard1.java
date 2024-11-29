@@ -80,6 +80,28 @@ public class dashboard1 extends javax.swing.JFrame {
         jScrollPane5 = new javax.swing.JScrollPane();
         tblResultadoReporte = new javax.swing.JTable();
         dateChFechaReportVenta = new com.toedter.calendar.JDateChooser();
+        frmNuevoUser = new javax.swing.JFrame();
+        jPanel5 = new javax.swing.JPanel();
+        lblCodigoU = new javax.swing.JLabel();
+        lblNombreU = new javax.swing.JLabel();
+        lblPaswordU = new javax.swing.JLabel();
+        lblUltimoU = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        txtCodigoU = new javax.swing.JTextField();
+        txtNombreU = new javax.swing.JTextField();
+        txtPasswordU = new javax.swing.JTextField();
+        btnRegistrarNuevoUsuario = new javax.swing.JButton();
+        btnSalirU = new javax.swing.JButton();
+        frmBuscarUsuario = new javax.swing.JFrame();
+        jPanel7 = new javax.swing.JPanel();
+        lblNombreUserBuscar = new javax.swing.JLabel();
+        jLabel45 = new javax.swing.JLabel();
+        txtNombUserBuscar = new javax.swing.JTextField();
+        btnBuscarUser = new javax.swing.JButton();
+        btnSalirBuscarU = new javax.swing.JButton();
+        JScrollPane3 = new javax.swing.JScrollPane();
+        tblResultadoUsuario = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
         header = new com.interfaz.dashboard.dashboard.PanelRound();
         jLabel1 = new javax.swing.JLabel();
@@ -129,6 +151,7 @@ public class dashboard1 extends javax.swing.JFrame {
         panelRound9 = new com.interfaz.dashboard.dashboard.PanelRound();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
         compDash7 = new com.interfaz.dashboard.dashboard.PanelRound();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -444,6 +467,224 @@ public class dashboard1 extends javax.swing.JFrame {
         frmReportarVentaLayout.setVerticalGroup(
             frmReportarVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        frmNuevoUser.setTitle("REGISTRAR NUEVO USUARIO");
+        frmNuevoUser.setBounds(new java.awt.Rectangle(450, 300, 0, 0));
+        frmNuevoUser.setMinimumSize(new java.awt.Dimension(450, 400));
+
+        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+
+        lblCodigoU.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
+        lblCodigoU.setText("Codigo:");
+
+        lblNombreU.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
+        lblNombreU.setText("Nombre:");
+
+        lblPaswordU.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
+        lblPaswordU.setText("Password:");
+
+        lblUltimoU.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        lblUltimoU.setText(".........");
+
+        jLabel5.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        jLabel5.setText("Ultimo Codigo Registrado:");
+
+        jLabel8.setFont(new java.awt.Font("Red Hat Display", 1, 24)); // NOI18N
+        jLabel8.setText("Ingresar Datos de Operador");
+
+        txtCodigoU.setBackground(new java.awt.Color(255, 255, 204));
+        txtCodigoU.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+        txtCodigoU.setForeground(new java.awt.Color(0, 0, 255));
+
+        txtNombreU.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+
+        txtPasswordU.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+
+        btnRegistrarNuevoUsuario.setBackground(new java.awt.Color(170, 0, 0));
+        btnRegistrarNuevoUsuario.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
+        btnRegistrarNuevoUsuario.setForeground(new java.awt.Color(255, 255, 255));
+        btnRegistrarNuevoUsuario.setText("Registrar");
+        btnRegistrarNuevoUsuario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRegistrarNuevoUsuarioActionPerformed(evt);
+            }
+        });
+
+        btnSalirU.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
+        btnSalirU.setText("Salir");
+        btnSalirU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirUActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNombreU)
+                            .addComponent(lblCodigoU)
+                            .addComponent(lblPaswordU))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCodigoU, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreU, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                            .addComponent(txtPasswordU)))
+                    .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblUltimoU))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(btnRegistrarNuevoUsuario)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalirU, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(lblUltimoU))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(lblCodigoU)
+                        .addGap(27, 27, 27)
+                        .addComponent(lblNombreU))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(txtCodigoU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(txtNombreU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPasswordU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPaswordU))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnRegistrarNuevoUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(btnSalirU, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout frmNuevoUserLayout = new javax.swing.GroupLayout(frmNuevoUser.getContentPane());
+        frmNuevoUser.getContentPane().setLayout(frmNuevoUserLayout);
+        frmNuevoUserLayout.setHorizontalGroup(
+            frmNuevoUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        frmNuevoUserLayout.setVerticalGroup(
+            frmNuevoUserLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        frmBuscarUsuario.setTitle("BUSCAR USUARIO");
+        frmBuscarUsuario.setMinimumSize(new java.awt.Dimension(450, 450));
+
+        jPanel7.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel7.setMinimumSize(new java.awt.Dimension(300, 300));
+
+        lblNombreUserBuscar.setText("Ingrese Codigo Usuario a Buscar: ");
+
+        jLabel45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel45.setText("BUSCAR USUARIO");
+
+        txtNombUserBuscar.setPreferredSize(new java.awt.Dimension(200, 200));
+        txtNombUserBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNombUserBuscarActionPerformed(evt);
+            }
+        });
+
+        btnBuscarUser.setText("BUSCAR");
+        btnBuscarUser.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarUserActionPerformed(evt);
+            }
+        });
+
+        btnSalirBuscarU.setText("Salir");
+        btnSalirBuscarU.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalirBuscarUActionPerformed(evt);
+            }
+        });
+
+        tblResultadoUsuario.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
+            },
+            new String [] {
+                "Nombre Usuario", "Password Usuario"
+            }
+        ));
+        JScrollPane3.setViewportView(tblResultadoUsuario);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(lblNombreUserBuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(148, 148, 148)
+                        .addComponent(jLabel45))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(138, 138, 138)
+                        .addComponent(btnBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
+                        .addComponent(JScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(btnSalirBuscarU, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(89, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel45)
+                .addGap(35, 35, 35)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNombreUserBuscar))
+                .addGap(27, 27, 27)
+                .addComponent(btnBuscarUser)
+                .addGap(18, 18, 18)
+                .addComponent(JScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSalirBuscarU, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout frmBuscarUsuarioLayout = new javax.swing.GroupLayout(frmBuscarUsuario.getContentPane());
+        frmBuscarUsuario.getContentPane().setLayout(frmBuscarUsuarioLayout);
+        frmBuscarUsuarioLayout.setHorizontalGroup(
+            frmBuscarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        frmBuscarUsuarioLayout.setVerticalGroup(
+            frmBuscarUsuarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -784,7 +1025,7 @@ public class dashboard1 extends javax.swing.JFrame {
         jLabel3.setBackground(new java.awt.Color(153, 153, 153));
         jLabel3.setFont(new java.awt.Font("Red Hat Display", 1, 48)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Bienvenida Karina.");
+        jLabel3.setText("Bienvenida Andrea");
 
         jLabel4.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
@@ -1055,6 +1296,15 @@ public class dashboard1 extends javax.swing.JFrame {
 
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/tarjeta-llave.png"))); // NOI18N
 
+        jLabel9.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
+        jLabel9.setText("BUSCAR");
+        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel9MousePressed(evt);
+            }
+        });
+
         javax.swing.GroupLayout compDash6Layout = new javax.swing.GroupLayout(compDash6);
         compDash6.setLayout(compDash6Layout);
         compDash6Layout.setHorizontalGroup(
@@ -1064,7 +1314,10 @@ public class dashboard1 extends javax.swing.JFrame {
                 .addGroup(compDash6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel29)
-                    .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(compDash6Layout.createSequentialGroup()
+                        .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel9))
                     .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(36, Short.MAX_VALUE))
         );
@@ -1077,8 +1330,13 @@ public class dashboard1 extends javax.swing.JFrame {
                 .addComponent(jLabel29)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(compDash6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(compDash6Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(compDash6Layout.createSequentialGroup()
+                        .addGap(21, 21, 21)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -1507,8 +1765,115 @@ public class dashboard1 extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel35MousePressed
 
     private void jLabel31MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel31MousePressed
-        // TODO add your handling code here:
+        // boton aandir operdaoes
+        frmNuevoUser.setVisible(true);
+        frmNuevoUser.setLocationRelativeTo(null);
+        
+        cConnection con = new cConnection();
+        
+        String query = "SELECT MAX(IdUser) AS IdUser FROM Usuario"; //selecciona el ultimo(MAX) registro de IdUser de la tabla
+        
+        try
+        {
+          Statement st = con.ObtenerConexion().createStatement();
+          ResultSet rs = st.executeQuery(query);
+             
+          if(rs.next())
+          {
+            lblUltimoU.setText(rs.getString("IdUser"));
+            int cod = Integer.parseInt(rs.getString("IdUser"));
+            cod++;
+            txtCodigoU.setText(String.valueOf(cod));
+            txtCodigoU.setEditable(false);
+            txtNombreU.requestFocus();
+          }      
+        }
+        catch(Exception e)
+        {
+          JOptionPane.showMessageDialog(null,"No existe el Usuario","Mensaje",JOptionPane.CANCEL_OPTION);
+        }
+        
     }//GEN-LAST:event_jLabel31MousePressed
+
+    private void btnRegistrarNuevoUsuarioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarNuevoUsuarioActionPerformed
+
+        cConnection con = new cConnection();
+
+        String codUser;
+        String nombUser;
+        String passUser;
+
+        try{
+
+            codUser = txtCodigoU.getText();
+            nombUser = txtNombreU.getText();
+            passUser = txtPasswordU.getText();
+
+            Statement st = null;
+            st = con.ObtenerConexion().createStatement();
+            st.executeUpdate("INSERT INTO Usuario(IdUser,NombUser,PassUser)" + "values("+codUser+" , '"+nombUser+"' , '"+passUser+"')");
+
+            JOptionPane.showMessageDialog(null, "Se registró usuario...");
+            txtCodigoU.setText("");
+            txtNombreU.setText("");
+            txtPasswordU.setText("");
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,"No se Pudo Agregar","Mensaje",JOptionPane.CANCEL_OPTION);
+            txtCodigoU.setText("");
+            txtNombreU.setText("");
+            txtPasswordU.setText("");
+        }
+    }//GEN-LAST:event_btnRegistrarNuevoUsuarioActionPerformed
+
+    private void btnSalirUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirUActionPerformed
+
+        frmNuevoUser.setVisible(false);
+    }//GEN-LAST:event_btnSalirUActionPerformed
+
+    private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MousePressed
+        // Buscar Operadores
+        
+    }//GEN-LAST:event_jLabel9MousePressed
+
+    private void txtNombUserBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombUserBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombUserBuscarActionPerformed
+
+    private void btnBuscarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUserActionPerformed
+
+        String codUser;
+
+        cConnection con = new cConnection();
+
+        try{
+            codUser = txtNombUserBuscar.getText();
+
+            DefaultTableModel dtBuscarUsuario = new DefaultTableModel(); //Crear Modelo de Tabla dtBuscarUsuario
+            tblResultadoUsuario.setModel(dtBuscarUsuario);  // Asignar el Modelo de Tabla para el tblResultadoUuario (formulario)
+
+            dtBuscarUsuario.addColumn("Nombre"); //Asigna nom,be a cada columna del Modelo de Tabla
+            dtBuscarUsuario.addColumn("Password");
+
+            String query = "SELECT * FROM Usuario WHERE IdUser = "+codUser+"";
+
+            PreparedStatement pstm = con.ObtenerConexion().prepareStatement(query);
+            ResultSet rs = pstm.executeQuery();
+
+            while(rs.next()){
+                dtBuscarUsuario.addRow(new Object[] {rs.getString("NombUser"),rs.getString("PassUSer")}); //Extrae del rs y lo añade al Modelo de Tabla
+            }
+            rs.close();
+        }
+        catch(SQLException e){
+            JOptionPane.showMessageDialog(null,"No existe Usuario. Puede Crear Nuevo.","Mensaje",JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBuscarUserActionPerformed
+
+    private void btnSalirBuscarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirBuscarUActionPerformed
+
+        frmBuscarUsuario.setVisible(false);
+    }//GEN-LAST:event_btnSalirBuscarUActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1546,6 +1911,7 @@ public class dashboard1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane JScrollPane3;
     private com.interfaz.dashboard.dashboard.PanelRound bg1;
     private com.interfaz.dashboard.dashboard.PanelRound btn;
     private com.interfaz.dashboard.dashboard.PanelRound btn2;
@@ -1554,11 +1920,15 @@ public class dashboard1 extends javax.swing.JFrame {
     private com.interfaz.dashboard.dashboard.PanelRound btn5;
     private com.interfaz.dashboard.dashboard.PanelRound btn7;
     private javax.swing.JLabel btnAjust;
+    private javax.swing.JButton btnBuscarUser;
     private javax.swing.JLabel btnDash;
     private javax.swing.JButton btnRegistrarNuevoProducto;
+    private javax.swing.JButton btnRegistrarNuevoUsuario;
     private javax.swing.JLabel btnRepor;
     private javax.swing.JButton btnReportar;
+    private javax.swing.JButton btnSalirBuscarU;
     private javax.swing.JButton btnSalirP;
+    private javax.swing.JButton btnSalirU;
     private javax.swing.JLabel btnSopor;
     private javax.swing.JLabel btnStart;
     private javax.swing.JLabel btnTrans;
@@ -1567,7 +1937,9 @@ public class dashboard1 extends javax.swing.JFrame {
     private com.interfaz.dashboard.dashboard.PanelRound compDash6;
     private com.interfaz.dashboard.dashboard.PanelRound compDash7;
     private com.toedter.calendar.JDateChooser dateChFechaReportVenta;
+    private javax.swing.JFrame frmBuscarUsuario;
     private javax.swing.JFrame frmNuevoProducto;
+    private javax.swing.JFrame frmNuevoUser;
     private javax.swing.JFrame frmReportarVenta;
     private com.interfaz.dashboard.dashboard.PanelRound header;
     private javax.swing.JLabel jLabel1;
@@ -1600,19 +1972,30 @@ public class dashboard1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
+    private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JLabel lblCodigoP;
+    private javax.swing.JLabel lblCodigoU;
     private javax.swing.JLabel lblNombreP;
+    private javax.swing.JLabel lblNombreU;
+    private javax.swing.JLabel lblNombreUserBuscar;
+    private javax.swing.JLabel lblPaswordU;
     private javax.swing.JLabel lblPrecio;
     private javax.swing.JLabel lblReportar;
     private javax.swing.JLabel lblSaldo;
     private javax.swing.JLabel lblUltimoP;
+    private javax.swing.JLabel lblUltimoU;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound1;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound10;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound3;
@@ -1623,9 +2006,14 @@ public class dashboard1 extends javax.swing.JFrame {
     private com.interfaz.dashboard.dashboard.PanelRound panelRound9;
     private com.interfaz.dashboard.dashboard.PanelRound showDisp;
     private javax.swing.JTable tblResultadoReporte;
+    private javax.swing.JTable tblResultadoUsuario;
     private javax.swing.JTextField txtCodigoP;
+    private javax.swing.JTextField txtCodigoU;
     private javax.swing.JLabel txtDisp;
+    private javax.swing.JTextField txtNombUserBuscar;
     private javax.swing.JTextField txtNombreP;
+    private javax.swing.JTextField txtNombreU;
+    private javax.swing.JTextField txtPasswordU;
     private javax.swing.JTextField txtPrecio;
     private javax.swing.JTextField txtSaldo;
     private javax.swing.JLabel txts12;

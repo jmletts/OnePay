@@ -202,27 +202,37 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
         frmNuevoUser.setBounds(new java.awt.Rectangle(450, 300, 0, 0));
         frmNuevoUser.setMinimumSize(new java.awt.Dimension(450, 400));
 
-        jPanel1.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblCodigoU.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
         lblCodigoU.setText("Codigo:");
 
+        lblNombreU.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
         lblNombreU.setText("Nombre:");
 
+        lblPaswordU.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
         lblPaswordU.setText("Password:");
 
-        lblUltimoU.setFont(new java.awt.Font("Tahoma", 1, 13)); // NOI18N
+        lblUltimoU.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         lblUltimoU.setText(".........");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         jLabel4.setText("Ultimo Codigo Registrado:");
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
-        jLabel5.setText("Ingresar Datos de Usuario");
+        jLabel5.setFont(new java.awt.Font("Red Hat Display", 1, 24)); // NOI18N
+        jLabel5.setText("Ingresar Datos de Operador");
 
         txtCodigoU.setBackground(new java.awt.Color(255, 255, 204));
-        txtCodigoU.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtCodigoU.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         txtCodigoU.setForeground(new java.awt.Color(0, 0, 255));
 
+        txtNombreU.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+
+        txtPasswordU.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
+
+        btnRegistrarNuevoUsuario.setBackground(new java.awt.Color(170, 0, 0));
+        btnRegistrarNuevoUsuario.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
+        btnRegistrarNuevoUsuario.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarNuevoUsuario.setText("Registrar");
         btnRegistrarNuevoUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,6 +240,7 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnSalirU.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
         btnSalirU.setText("Salir");
         btnSalirU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -242,66 +253,57 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(btnRegistrarNuevoUsuario)
-                                .addGap(26, 26, 26)
-                                .addComponent(btnSalirU, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18))
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblPaswordU)
-                                        .addGap(166, 166, 166))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(lblNombreU)
-                                        .addGap(44, 44, 44)))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                    .addComponent(jLabel4)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(lblUltimoU))
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addComponent(lblCodigoU)
-                                    .addGap(39, 39, 39)
-                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(txtCodigoU, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtPasswordU, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtNombreU, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(36, 36, 36)))))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNombreU)
+                            .addComponent(lblCodigoU)
+                            .addComponent(lblPaswordU))
+                        .addGap(24, 24, 24)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtCodigoU, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtNombreU, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
+                            .addComponent(txtPasswordU)))
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(87, 87, 87))
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblUltimoU))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnRegistrarNuevoUsuario)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalirU, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(22, 22, 22)
+                .addGap(21, 21, 21)
                 .addComponent(jLabel5)
-                .addGap(35, 35, 35)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(lblUltimoU))
-                .addGap(27, 27, 27)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtCodigoU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCodigoU))
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNombreU)
-                    .addComponent(txtNombreU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(29, 29, 29)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPaswordU)
-                    .addComponent(txtPasswordU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(44, 44, 44)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrarNuevoUsuario)
-                    .addComponent(btnSalirU))
-                .addContainerGap(17, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(lblCodigoU)
+                        .addGap(27, 27, 27)
+                        .addComponent(lblNombreU))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(txtCodigoU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addComponent(txtNombreU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtPasswordU, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(lblPaswordU))))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnRegistrarNuevoUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+                    .addComponent(btnSalirU, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout frmNuevoUserLayout = new javax.swing.GroupLayout(frmNuevoUser.getContentPane());
@@ -440,25 +442,40 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
         frmNuevoCliente.setTitle("REGISTRAR NUEVO CLIENTE");
         frmNuevoCliente.setBounds(new java.awt.Rectangle(450, 300, 0, 0));
         frmNuevoCliente.setMinimumSize(new java.awt.Dimension(450, 400));
+        frmNuevoCliente.setPreferredSize(new java.awt.Dimension(450, 400));
 
-        jPanel3.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        lblDNIC.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
         lblDNIC.setText("DNI:");
 
+        lblNombreC.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
         lblNombreC.setText("Nombre:");
 
+        lblApellidoC.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
         lblApellidoC.setText("Apellido:");
 
+        lblDireccionC.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
         lblDireccionC.setText("Direccion:");
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Red Hat Display", 1, 24)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(170, 0, 0));
         jLabel9.setText("Ingresar Datos de Cliente");
         jLabel9.setToolTipText("");
 
-        txtDNIC.setBackground(new java.awt.Color(255, 255, 204));
-        txtDNIC.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        txtDNIC.setBackground(new java.awt.Color(255, 204, 255));
+        txtDNIC.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
         txtDNIC.setForeground(new java.awt.Color(0, 0, 255));
 
+        txtNombreC.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
+
+        txtApellidoC.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
+
+        txtDireccionC.setFont(new java.awt.Font("Red Hat Display", 0, 16)); // NOI18N
+
+        btnRegistrarNuevoCliente.setBackground(new java.awt.Color(170, 0, 0));
+        btnRegistrarNuevoCliente.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
+        btnRegistrarNuevoCliente.setForeground(new java.awt.Color(255, 255, 255));
         btnRegistrarNuevoCliente.setText("Registrar");
         btnRegistrarNuevoCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -466,6 +483,7 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnSalirC.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
         btnSalirC.setText("Salir");
         btnSalirC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -478,37 +496,33 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(81, 81, 81)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
                         .addComponent(btnRegistrarNuevoCliente)
-                        .addGap(34, 34, 34)
-                        .addComponent(btnSalirC, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(btnSalirC, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 243, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(51, 51, 51)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblApellidoC)
                             .addComponent(lblDireccionC)
                             .addComponent(lblNombreC)
                             .addComponent(lblDNIC))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtDNIC, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNombreC, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtApellidoC, javax.swing.GroupLayout.DEFAULT_SIZE, 120, Short.MAX_VALUE)
-                                .addComponent(txtDireccionC)))))
-                .addContainerGap(72, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtDNIC)
+                            .addComponent(txtNombreC)
+                            .addComponent(txtApellidoC)
+                            .addComponent(txtDireccionC, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(135, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel9)
-                .addGap(46, 46, 46)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDNIC)
                     .addComponent(txtDNIC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -524,11 +538,11 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblDireccionC)
                     .addComponent(txtDireccionC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistrarNuevoCliente)
-                    .addComponent(btnSalirC))
-                .addGap(27, 27, 27))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnRegistrarNuevoCliente, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+                    .addComponent(btnSalirC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(50, 50, 50))
         );
 
         javax.swing.GroupLayout frmNuevoClienteLayout = new javax.swing.GroupLayout(frmNuevoCliente.getContentPane());
@@ -1047,7 +1061,7 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
                                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(btnQuitarPedido, javax.swing.GroupLayout.DEFAULT_SIZE, 128, Short.MAX_VALUE)
+                                    .addComponent(btnQuitarPedido, javax.swing.GroupLayout.PREFERRED_SIZE, 128, Short.MAX_VALUE)
                                     .addComponent(btnEfectuar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(btnCancelar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                 .addGap(71, 71, 71))))
