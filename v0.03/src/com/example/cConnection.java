@@ -3,7 +3,7 @@ import java.sql.*;
 
 public class cConnection {
     
-    private String url = "jdbc:ucanaccess://C:\\Users\\EstudianteUC\\Documents\\clone\\OnePay\\v0.03\\BDVentas.accdb"; 
+    private String url = "jdbc:ucanaccess:///Users/macbook/Documents/4to-Semestre/proyectoPOS/OnePay/v0.03/BDVentas.accdb"; 
     private String usr = ""; // C:\Users\Eliab\Desktop\4to Semestre\Programación Orientada a Objetos\Proyecto5 FINAL-20241112T005254Z-001\Proyecto5 FINAL
     private String pswd = ""; 
     private Connection con=null; 

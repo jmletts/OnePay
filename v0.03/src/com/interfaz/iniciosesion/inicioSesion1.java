@@ -16,6 +16,7 @@ import java.awt.Frame;
 import com.font.InstallFont;
 import static com.interfaz.iniciosesion.FormIniciarSesion.NombUsuario;
 import com.interfaz.loader.LoaderService2;
+import com.interfaz.loader.loaderCargaStand;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -486,21 +487,13 @@ public class inicioSesion1 extends javax.swing.JFrame {
                 this.setVisible(false);
                 
                 try {
-                        final FormSplash sp = new FormSplash(); 
-             
-                        sp.setVisible(true);
+                        
+                        
+                        loaderCargaStand loa = new loaderCargaStand();                   
+                        dashboard1 das = new dashboard1();
+                        das.setVisible(true);
 
-                        final FormVentanaPrincipal vp = new FormVentanaPrincipal();
-
-                        Thread hilos = new Thread()
-                        {   @Override
-                            public void run(){
-                                                                           
-                               
-                            }
-                        };
-            
-                        hilos.start();
+                        
                 }
                 catch(Exception e){
                     JOptionPane.showMessageDialog(null,"Fatal ERROR, Carga erronea de los modulos"); 
