@@ -29,15 +29,26 @@ import javax.swing.table.DefaultTableModel;
  * @author EstudianteUC
  */
 public class dashboard1 extends javax.swing.JFrame {
-
+    
+    static String nomb = "No iniciado";
     /**
      * Creates new form dashboard1
      */
-    Calendar calend = new GregorianCalendar();
+    Calendar calend;
     public dashboard1() {
+        this.calend = new GregorianCalendar();
         initComponents();
-        setLocationRelativeTo(null);
+        setLocationRelativeTo(null);   
+        txtNomb.setText(nomb);
     }
+    
+    public void getName(String Nombre){
+        
+        nomb = "Bienvenido "+Nombre;
+        txtNomb.setText(nomb);
+        
+    }
+    
     
     public void cerrarTodo() {
         for (Frame frame : Frame.getFrames()) {
@@ -99,7 +110,6 @@ public class dashboard1 extends javax.swing.JFrame {
         jLabel45 = new javax.swing.JLabel();
         txtNombUserBuscar = new javax.swing.JTextField();
         btnBuscarUser = new javax.swing.JButton();
-        btnSalirBuscarU = new javax.swing.JButton();
         JScrollPane3 = new javax.swing.JScrollPane();
         tblResultadoUsuario = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
@@ -122,7 +132,7 @@ public class dashboard1 extends javax.swing.JFrame {
         showDisp = new com.interfaz.dashboard.dashboard.PanelRound();
         txtDisp = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        txtNomb = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         panelRound1 = new com.interfaz.dashboard.dashboard.PanelRound();
@@ -139,6 +149,8 @@ public class dashboard1 extends javax.swing.JFrame {
         panelRound7 = new com.interfaz.dashboard.dashboard.PanelRound();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
+        panelRound14 = new com.interfaz.dashboard.dashboard.PanelRound();
+        jLabel49 = new javax.swing.JLabel();
         compDash5 = new com.interfaz.dashboard.dashboard.PanelRound();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -151,7 +163,8 @@ public class dashboard1 extends javax.swing.JFrame {
         panelRound9 = new com.interfaz.dashboard.dashboard.PanelRound();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
+        panelRound15 = new com.interfaz.dashboard.dashboard.PanelRound();
+        jLabel50 = new javax.swing.JLabel();
         compDash7 = new com.interfaz.dashboard.dashboard.PanelRound();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -591,14 +604,17 @@ public class dashboard1 extends javax.swing.JFrame {
         frmBuscarUsuario.setTitle("BUSCAR USUARIO");
         frmBuscarUsuario.setMinimumSize(new java.awt.Dimension(450, 450));
 
-        jPanel7.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setMinimumSize(new java.awt.Dimension(300, 300));
 
+        lblNombreUserBuscar.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         lblNombreUserBuscar.setText("Ingrese Codigo Usuario a Buscar: ");
 
-        jLabel45.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel45.setFont(new java.awt.Font("Red Hat Display", 1, 24)); // NOI18N
+        jLabel45.setForeground(new java.awt.Color(170, 0, 0));
         jLabel45.setText("BUSCAR USUARIO");
 
+        txtNombUserBuscar.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         txtNombUserBuscar.setPreferredSize(new java.awt.Dimension(200, 200));
         txtNombUserBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -606,6 +622,7 @@ public class dashboard1 extends javax.swing.JFrame {
             }
         });
 
+        btnBuscarUser.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         btnBuscarUser.setText("BUSCAR");
         btnBuscarUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -613,13 +630,7 @@ public class dashboard1 extends javax.swing.JFrame {
             }
         });
 
-        btnSalirBuscarU.setText("Salir");
-        btnSalirBuscarU.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalirBuscarUActionPerformed(evt);
-            }
-        });
-
+        tblResultadoUsuario.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         tblResultadoUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -638,42 +649,30 @@ public class dashboard1 extends javax.swing.JFrame {
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(lblNombreUserBuscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(jLabel45))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(btnBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(JScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(btnSalirBuscarU, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                    .addComponent(jLabel45)
+                    .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lblNombreUserBuscar, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel45)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNombreUserBuscar))
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblNombreUserBuscar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnBuscarUser)
-                .addGap(18, 18, 18)
+                .addGap(35, 35, 35)
                 .addComponent(JScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSalirBuscarU, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout frmBuscarUsuarioLayout = new javax.swing.GroupLayout(frmBuscarUsuario.getContentPane());
@@ -1022,10 +1021,10 @@ public class dashboard1 extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
-        jLabel3.setBackground(new java.awt.Color(153, 153, 153));
-        jLabel3.setFont(new java.awt.Font("Red Hat Display", 1, 48)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Bienvenida Andrea");
+        txtNomb.setBackground(new java.awt.Color(153, 153, 153));
+        txtNomb.setFont(new java.awt.Font("Red Hat Display", 1, 48)); // NOI18N
+        txtNomb.setForeground(new java.awt.Color(51, 51, 51));
+        txtNomb.setText("Bienvenida Andrea");
 
         jLabel4.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(102, 102, 102));
@@ -1121,7 +1120,7 @@ public class dashboard1 extends javax.swing.JFrame {
         compDash4.setRoundTopRight(60);
 
         jLabel21.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
-        jLabel21.setText("SUBIR PRODUCTO");
+        jLabel21.setText("PRODUCTOS");
 
         jLabel22.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         jLabel22.setText("<html>Actualiza tu base de datos constatemente <br >para evitar falta de stock.</html>");
@@ -1135,7 +1134,7 @@ public class dashboard1 extends javax.swing.JFrame {
         jLabel23.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
         jLabel23.setForeground(new java.awt.Color(255, 255, 255));
         jLabel23.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel23.setText("Continuar");
+        jLabel23.setText("Nuevo");
         jLabel23.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel23MousePressed(evt);
@@ -1155,6 +1154,33 @@ public class dashboard1 extends javax.swing.JFrame {
 
         jLabel24.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/caja.png"))); // NOI18N
 
+        panelRound14.setBackground(new java.awt.Color(102, 102, 102));
+        panelRound14.setRoundBottomLeft(30);
+        panelRound14.setRoundBottomRight(30);
+        panelRound14.setRoundTopLeft(30);
+        panelRound14.setRoundTopRight(30);
+
+        jLabel49.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
+        jLabel49.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel49.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel49.setText("Buscar");
+        jLabel49.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                jLabel49MousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout panelRound14Layout = new javax.swing.GroupLayout(panelRound14);
+        panelRound14.setLayout(panelRound14Layout);
+        panelRound14Layout.setHorizontalGroup(
+            panelRound14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+        );
+        panelRound14Layout.setVerticalGroup(
+            panelRound14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel49, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout compDash4Layout = new javax.swing.GroupLayout(compDash4);
         compDash4.setLayout(compDash4Layout);
         compDash4Layout.setHorizontalGroup(
@@ -1165,24 +1191,30 @@ public class dashboard1 extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(compDash4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel21)
-                            .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(compDash4Layout.createSequentialGroup()
+                                .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(panelRound14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(compDash4Layout.createSequentialGroup()
                         .addGap(15, 15, 15)
                         .addComponent(jLabel24)))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         compDash4Layout.setVerticalGroup(
             compDash4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, compDash4Layout.createSequentialGroup()
+            .addGroup(compDash4Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel21)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(compDash4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(panelRound14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(compDash4Layout.createSequentialGroup()
+                        .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelRound7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -1262,7 +1294,7 @@ public class dashboard1 extends javax.swing.JFrame {
         compDash6.setRoundTopRight(60);
 
         jLabel29.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
-        jLabel29.setText("CREAR OPERADORES");
+        jLabel29.setText("OPERADORES ");
 
         jLabel30.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         jLabel30.setText("<html>Configura el pin de seguridad local para <br >para añadir operadores y accesos</html>");
@@ -1276,7 +1308,7 @@ public class dashboard1 extends javax.swing.JFrame {
         jLabel31.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
         jLabel31.setForeground(new java.awt.Color(255, 255, 255));
         jLabel31.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel31.setText("Continuar");
+        jLabel31.setText("Nuevo");
         jLabel31.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel31MousePressed(evt);
@@ -1296,14 +1328,32 @@ public class dashboard1 extends javax.swing.JFrame {
 
         jLabel32.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/images/tarjeta-llave.png"))); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel9.setText("BUSCAR");
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        panelRound15.setBackground(new java.awt.Color(102, 102, 102));
+        panelRound15.setRoundBottomLeft(30);
+        panelRound15.setRoundBottomRight(30);
+        panelRound15.setRoundTopLeft(30);
+        panelRound15.setRoundTopRight(30);
+
+        jLabel50.setFont(new java.awt.Font("Red Hat Display", 1, 16)); // NOI18N
+        jLabel50.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel50.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel50.setText("Buscar");
+        jLabel50.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel9MousePressed(evt);
+                jLabel50MousePressed(evt);
             }
         });
+
+        javax.swing.GroupLayout panelRound15Layout = new javax.swing.GroupLayout(panelRound15);
+        panelRound15.setLayout(panelRound15Layout);
+        panelRound15Layout.setHorizontalGroup(
+            panelRound15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+        );
+        panelRound15Layout.setVerticalGroup(
+            panelRound15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jLabel50, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout compDash6Layout = new javax.swing.GroupLayout(compDash6);
         compDash6.setLayout(compDash6Layout);
@@ -1316,10 +1366,10 @@ public class dashboard1 extends javax.swing.JFrame {
                     .addComponent(jLabel29)
                     .addGroup(compDash6Layout.createSequentialGroup()
                         .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(panelRound15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
         compDash6Layout.setVerticalGroup(
             compDash6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1330,13 +1380,10 @@ public class dashboard1 extends javax.swing.JFrame {
                 .addComponent(jLabel29)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(compDash6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(compDash6Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(compDash6Layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(panelRound9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(panelRound15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -1466,7 +1513,7 @@ public class dashboard1 extends javax.swing.JFrame {
                         .addComponent(compDash6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel3)
+                            .addComponent(txtNomb)
                             .addComponent(jLabel4)
                             .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1487,7 +1534,7 @@ public class dashboard1 extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtNomb, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel18, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1831,14 +1878,15 @@ public class dashboard1 extends javax.swing.JFrame {
         frmNuevoUser.setVisible(false);
     }//GEN-LAST:event_btnSalirUActionPerformed
 
-    private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MousePressed
-        // Buscar Operadores
-        
-    }//GEN-LAST:event_jLabel9MousePressed
-
-    private void txtNombUserBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombUserBuscarActionPerformed
+    private void jLabel49MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel49MousePressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNombUserBuscarActionPerformed
+    }//GEN-LAST:event_jLabel49MousePressed
+
+    private void jLabel50MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel50MousePressed
+        // buscar Usuario
+        frmBuscarUsuario.setVisible(true);
+        frmBuscarUsuario.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jLabel50MousePressed
 
     private void btnBuscarUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarUserActionPerformed
 
@@ -1870,10 +1918,9 @@ public class dashboard1 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnBuscarUserActionPerformed
 
-    private void btnSalirBuscarUActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirBuscarUActionPerformed
-
-        frmBuscarUsuario.setVisible(false);
-    }//GEN-LAST:event_btnSalirBuscarUActionPerformed
+    private void txtNombUserBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombUserBuscarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNombUserBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1926,7 +1973,6 @@ public class dashboard1 extends javax.swing.JFrame {
     private javax.swing.JButton btnRegistrarNuevoUsuario;
     private javax.swing.JLabel btnRepor;
     private javax.swing.JButton btnReportar;
-    private javax.swing.JButton btnSalirBuscarU;
     private javax.swing.JButton btnSalirP;
     private javax.swing.JButton btnSalirU;
     private javax.swing.JLabel btnSopor;
@@ -1955,7 +2001,6 @@ public class dashboard1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
@@ -1973,11 +2018,12 @@ public class dashboard1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel45;
+    private javax.swing.JLabel jLabel49;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel50;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -1998,6 +2044,8 @@ public class dashboard1 extends javax.swing.JFrame {
     private javax.swing.JLabel lblUltimoU;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound1;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound10;
+    private com.interfaz.dashboard.dashboard.PanelRound panelRound14;
+    private com.interfaz.dashboard.dashboard.PanelRound panelRound15;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound3;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound4;
     private com.interfaz.dashboard.dashboard.PanelRound panelRound5;
@@ -2010,6 +2058,7 @@ public class dashboard1 extends javax.swing.JFrame {
     private javax.swing.JTextField txtCodigoP;
     private javax.swing.JTextField txtCodigoU;
     private javax.swing.JLabel txtDisp;
+    private javax.swing.JLabel txtNomb;
     private javax.swing.JTextField txtNombUserBuscar;
     private javax.swing.JTextField txtNombreP;
     private javax.swing.JTextField txtNombreU;

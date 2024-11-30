@@ -29,7 +29,6 @@ import javax.swing.JOptionPane;
  * @author macbook
  */
 public class inicioSesion1 extends javax.swing.JFrame {
-    String pin = "1234";
     int x = 1;
     public static String NombUsuario;
     /**
@@ -191,7 +190,7 @@ public class inicioSesion1 extends javax.swing.JFrame {
         btnINi.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         btnINi.setText("INICIO SESION");
         btnINi.setToolTipText("");
-        btnINi.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        btnINi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnINi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnINiMouseClicked(evt);
@@ -351,7 +350,7 @@ public class inicioSesion1 extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Red Hat Display", 1, 18)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("X");
-        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jLabel4.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 jLabel4MousePressed(evt);
@@ -446,6 +445,7 @@ public class inicioSesion1 extends javax.swing.JFrame {
 
     private void btnINiMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnINiMousePressed
         
+        
         cConnection cn = new cConnection(); // invoca a la clase que conecta
     
     Statement  st = null; 
@@ -492,6 +492,8 @@ public class inicioSesion1 extends javax.swing.JFrame {
                         loaderCargaStand loa = new loaderCargaStand();                   
                         dashboard1 das = new dashboard1();
                         das.setVisible(true);
+                        das.getName(user);
+                       
 
                         
                 }

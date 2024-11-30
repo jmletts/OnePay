@@ -442,7 +442,6 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
         frmNuevoCliente.setTitle("REGISTRAR NUEVO CLIENTE");
         frmNuevoCliente.setBounds(new java.awt.Rectangle(450, 300, 0, 0));
         frmNuevoCliente.setMinimumSize(new java.awt.Dimension(450, 400));
-        frmNuevoCliente.setPreferredSize(new java.awt.Dimension(450, 400));
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -1287,14 +1286,17 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
         frmBuscarUsuario.setTitle("BUSCAR USUARIO");
         frmBuscarUsuario.setMinimumSize(new java.awt.Dimension(450, 450));
 
-        jPanel7.setBackground(new java.awt.Color(153, 204, 255));
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
         jPanel7.setMinimumSize(new java.awt.Dimension(300, 300));
 
+        lblNombreUserBuscar.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
         lblNombreUserBuscar.setText("Ingrese Codigo Usuario a Buscar: ");
 
-        jLabel22.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel22.setFont(new java.awt.Font("Red Hat Display", 1, 24)); // NOI18N
+        jLabel22.setForeground(new java.awt.Color(170, 0, 0));
         jLabel22.setText("BUSCAR USUARIO");
 
+        txtNombUserBuscar.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         txtNombUserBuscar.setPreferredSize(new java.awt.Dimension(200, 200));
         txtNombUserBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1302,6 +1304,9 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnBuscarUser.setBackground(new java.awt.Color(170, 0, 0));
+        btnBuscarUser.setFont(new java.awt.Font("Red Hat Display", 1, 14)); // NOI18N
+        btnBuscarUser.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscarUser.setText("BUSCAR");
         btnBuscarUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1309,6 +1314,7 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        btnSalirBuscarU.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         btnSalirBuscarU.setText("Salir");
         btnSalirBuscarU.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1316,6 +1322,7 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        tblResultadoUsuario.setFont(new java.awt.Font("Red Hat Display", 0, 14)); // NOI18N
         tblResultadoUsuario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -1333,43 +1340,41 @@ public class FormVentanaPrincipal extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel7Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(lblNombreUserBuscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblNombreUserBuscar)
+                            .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(148, 148, 148)
-                        .addComponent(jLabel22))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(btnBuscarUser, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addComponent(JScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(147, 147, 147)
-                        .addComponent(btnSalirBuscarU, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(89, Short.MAX_VALUE))
+                        .addComponent(jLabel22)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnSalirBuscarU, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 399, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
-                .addGap(30, 30, 30)
+                .addGap(29, 29, 29)
                 .addComponent(jLabel22)
-                .addGap(35, 35, 35)
-                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNombreUserBuscar))
-                .addGap(27, 27, 27)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblNombreUserBuscar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtNombUserBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnBuscarUser)
+                .addGap(31, 31, 31)
+                .addComponent(JScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
-                .addComponent(JScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(btnSalirBuscarU, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addComponent(btnSalirBuscarU)
+                .addGap(27, 27, 27))
         );
 
         javax.swing.GroupLayout frmBuscarUsuarioLayout = new javax.swing.GroupLayout(frmBuscarUsuario.getContentPane());
