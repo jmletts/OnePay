@@ -611,13 +611,10 @@ public class carrito extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -633,9 +630,6 @@ public class carrito extends javax.swing.JFrame {
     private com.interfaz.iniciosesion.PanelRound panelRound3;
     private com.interfaz.iniciosesion.PanelRound panelRound4;
     private com.interfaz.iniciosesion.PanelRound panelRound5;
-    private com.interfaz.iniciosesion.PanelRound panelRound6;
-    private com.interfaz.iniciosesion.PanelRound panelRound7;
-    private com.interfaz.iniciosesion.PanelRound panelRound8;
     private com.interfaz.iniciosesion.PanelRound panelRound9;
     private javax.swing.JLabel txtEscan;
     private javax.swing.JLabel txtEscan1;
