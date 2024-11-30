@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MercadoPagoService {
-    private static final String ACCESS_TOKEN = "APP_USR-7212836823831462-111514-73f1dc599ab85b134cd69f9b1a2f8776-2100204072";
+    private static final String ACCESS_TOKEN = "APP_USR-5739980843622193-111513-ea65530d7c13ce16e1d8f3c84109df6f-211490137";
 
     public MercadoPagoService() {
         // Configurar el Access Token
